@@ -5,9 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "fogosmobile",
+            "name": "fogos",
             "request": "launch",
-            "type": "dart"
+            "type": "dart",
+            "program": "apps/fogospt/lib/main.dart"
         },
         {
             "name": "fogosmobile (profile mode)",
