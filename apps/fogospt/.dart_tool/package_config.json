@@ -134,6 +134,12 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "dart_earcut",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/dart_earcut-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "dart_style",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/dart_style-2.3.6",
       "packageUri": "lib/",
@@ -165,7 +171,7 @@
     },
     {
       "name": "flutter",
-      "rootUri": "file:///USERS/FILIPE.BARROSO/SOFTWARE/FLUTTER/packages/flutter",
+      "rootUri": "file:///Users/filipe.barroso/Software/flutter/packages/flutter",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -182,14 +188,20 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_map",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_map-7.0.2",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "flutter_test",
-      "rootUri": "file:///USERS/FILIPE.BARROSO/SOFTWARE/FLUTTER/packages/flutter_test",
+      "rootUri": "file:///Users/filipe.barroso/Software/flutter/packages/flutter_test",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
     {
       "name": "flutter_web_plugins",
-      "rootUri": "file:///USERS/FILIPE.BARROSO/SOFTWARE/FLUTTER/packages/flutter_web_plugins",
+      "rootUri": "file:///Users/filipe.barroso/Software/flutter/packages/flutter_web_plugins",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -254,6 +266,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "intl",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/intl-0.19.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "io",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/io-1.0.4",
       "packageUri": "lib/",
@@ -274,6 +292,12 @@
     {
       "name": "json_serializable",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/json_serializable-6.8.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
+      "name": "latlong2",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/latlong2-0.9.1",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     },
@@ -300,6 +324,12 @@
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/lints-3.0.0",
       "packageUri": "lib/",
       "languageVersion": "3.0"
+    },
+    {
+      "name": "lists",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/lists-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
     },
     {
       "name": "logger",
@@ -332,6 +362,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mgrs_dart",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/mgrs_dart-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "mime",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/mime-1.0.5",
       "packageUri": "lib/",
@@ -356,8 +392,20 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "polylabel",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/polylabel-1.0.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.13"
+    },
+    {
       "name": "pool",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/pool-1.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "proj4dart",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/proj4dart-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -399,7 +447,7 @@
     },
     {
       "name": "sky_engine",
-      "rootUri": "file:///USERS/FILIPE.BARROSO/SOFTWARE/FLUTTER/bin/cache/pkg/sky_engine",
+      "rootUri": "file:///Users/filipe.barroso/Software/flutter/bin/cache/pkg/sky_engine",
       "packageUri": "lib/",
       "languageVersion": "3.2"
     },
@@ -476,6 +524,12 @@
       "languageVersion": "2.17"
     },
     {
+      "name": "unicode",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/unicode-0.3.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "uuid",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/uuid-4.3.3",
       "packageUri": "lib/",
@@ -518,6 +572,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "wkt_parser",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/wkt_parser-2.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "yaml",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/yaml-3.1.2",
       "packageUri": "lib/",
@@ -530,7 +590,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-07-13T22:41:28.055656Z",
+  "generated": "2024-07-13T23:07:41.824366Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

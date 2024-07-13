@@ -17,7 +17,7 @@ class FogosApp extends StatelessWidget {
         LatestFiresService(
           FiresRepository(
             FogosApi(
-              FogosEnvironment.dev(),
+              fogosEnvironment: FogosEnvironment.dev(),
             ),
           ),
         ),

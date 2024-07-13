@@ -12,7 +12,8 @@ class LatestFiresService {
       return await firesRepository.listActiveFires();
     } catch (e) {
       log(e);
-      return Fires(data: [], success: false);
+      rethrow;
+      // return Fires(data: [], success: false);
     }
   }
 }

@@ -23,6 +23,8 @@ dependencies:
   fogos_api: 0.0.2
   json_annotation: ^4.9.0
   flutter_bloc: ^8.1.6
+  flutter_map: ^7.0.2
+  latlong2: ^0.9.1
 
 dev_dependencies:
   flutter_test:

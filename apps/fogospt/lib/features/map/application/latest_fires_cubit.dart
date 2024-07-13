@@ -7,13 +7,15 @@ class LatestFiresCubit extends Cubit<LatestFiresState> {
 
   LatestFiresCubit(this.service) : super(Initial());
 
-  void fetchLatestFires() {
+  Future<void> fetchLatestFires() async {
     emit(Loading());
 
-    service.fetchLatestFires().then((fires) {
+    final fires = await service.fetchLatestFires();
+
+    if (fires.success) {
       emit(Loaded(fires: fires));
-    }).catchError((error) {
+    } else {
       emit(Error());
-    });
+    }
   }
 }

@@ -1,13 +1,9 @@
 import 'package:http/http.dart' as http;
-import 'package:warnings_api/environment.dart';
 
 import 'fogos_base_client.dart';
 
-class FogosApi implements FogosBaseClient {
-  FogosApi(Environment environment);
-
-  @override
-  Environment get environment => Environment.dev(environment.baseUrl);
+class FogosApi extends FogosBaseClient {
+  FogosApi({required super.fogosEnvironment});
 
   @override
   Future<http.Response> listActiveFires() {
