@@ -20,49 +20,51 @@ Fire _$FireFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Fire {
-  Id get id => throw _privateConstructorUsedError;
-  String get datumId => throw _privateConstructorUsedError;
+// @JsonKey(name: "_id") required Id id,
+  String get id => throw _privateConstructorUsedError;
   bool get coords => throw _privateConstructorUsedError;
   Created get dateTime => throw _privateConstructorUsedError;
   String get date => throw _privateConstructorUsedError;
   String get hour => throw _privateConstructorUsedError;
   String get location => throw _privateConstructorUsedError;
   int get aerial => throw _privateConstructorUsedError;
-  int get meiosAquaticos => throw _privateConstructorUsedError;
+  int get terrain =>
+      throw _privateConstructorUsedError; // required int meiosAquaticos,
   int get man => throw _privateConstructorUsedError;
-  int get terrain => throw _privateConstructorUsedError;
   String get district => throw _privateConstructorUsedError;
   String get concelho => throw _privateConstructorUsedError;
   String get freguesia => throw _privateConstructorUsedError;
   String get dico => throw _privateConstructorUsedError;
   double get lat => throw _privateConstructorUsedError;
   double get lng => throw _privateConstructorUsedError;
-  String get naturezaCode => throw _privateConstructorUsedError;
-  String get natureza => throw _privateConstructorUsedError;
-  dynamic get especieName => throw _privateConstructorUsedError;
-  dynamic get familiaName => throw _privateConstructorUsedError;
-  int get statusCode => throw _privateConstructorUsedError;
-  String get statusColor => throw _privateConstructorUsedError;
+  String get naturezaCode =>
+      throw _privateConstructorUsedError; // 3101, 3103, 3105, 3107
+  String get natureza =>
+      throw _privateConstructorUsedError; // required dynamic especieName,
+// required dynamic familiaName,
+  int get statusCode => throw _privateConstructorUsedError; // 3, 4, 5, 6
+  String get statusColor =>
+      throw _privateConstructorUsedError; // Hexadecimal code representing colors, related with statusCode value.
   String get status => throw _privateConstructorUsedError;
-  bool get important => throw _privateConstructorUsedError;
-  String get localidade => throw _privateConstructorUsedError;
+  bool get important =>
+      throw _privateConstructorUsedError; // required String localidade,
   bool get active => throw _privateConstructorUsedError;
   String get sadoId => throw _privateConstructorUsedError;
   int get sharepointId => throw _privateConstructorUsedError;
-  dynamic get extra => throw _privateConstructorUsedError;
-  bool get disappear => throw _privateConstructorUsedError;
-  Icnf? get icnf => throw _privateConstructorUsedError;
-  String? get detailLocation => throw _privateConstructorUsedError;
-  dynamic get kml => throw _privateConstructorUsedError;
-  dynamic get kmlVost => throw _privateConstructorUsedError;
-  dynamic get pco => throw _privateConstructorUsedError;
-  dynamic get cos => throw _privateConstructorUsedError;
-  int get heliFight => throw _privateConstructorUsedError;
-  int get heliCoord => throw _privateConstructorUsedError;
-  int get planeFight => throw _privateConstructorUsedError;
-  bool get anepcDirectUpdate => throw _privateConstructorUsedError;
-  String get regiao => throw _privateConstructorUsedError;
-  String get subRegiao => throw _privateConstructorUsedError;
+  String? get extra => throw _privateConstructorUsedError;
+  bool get disappear =>
+      throw _privateConstructorUsedError; // required Icnf? icnf,
+// required String? detailLocation,
+// required dynamic kml,
+// required dynamic kmlVost,
+// required dynamic pco,
+// required dynamic cos,
+// required int heliFight,
+// required int heliCoord,
+// required int planeFight,
+// required bool anepcDirectUpdate,
+// required String regiao,
+// required String subRegiao,
   Created get created => throw _privateConstructorUsedError;
   Created get updated => throw _privateConstructorUsedError;
 
@@ -77,17 +79,15 @@ abstract class $FireCopyWith<$Res> {
       _$FireCopyWithImpl<$Res, Fire>;
   @useResult
   $Res call(
-      {Id id,
-      String datumId,
+      {String id,
       bool coords,
       Created dateTime,
       String date,
       String hour,
       String location,
       int aerial,
-      int meiosAquaticos,
-      int man,
       int terrain,
+      int man,
       String district,
       String concelho,
       String freguesia,
@@ -96,36 +96,19 @@ abstract class $FireCopyWith<$Res> {
       double lng,
       String naturezaCode,
       String natureza,
-      dynamic especieName,
-      dynamic familiaName,
       int statusCode,
       String statusColor,
       String status,
       bool important,
-      String localidade,
       bool active,
       String sadoId,
       int sharepointId,
-      dynamic extra,
+      String? extra,
       bool disappear,
-      Icnf? icnf,
-      String? detailLocation,
-      dynamic kml,
-      dynamic kmlVost,
-      dynamic pco,
-      dynamic cos,
-      int heliFight,
-      int heliCoord,
-      int planeFight,
-      bool anepcDirectUpdate,
-      String regiao,
-      String subRegiao,
       Created created,
       Created updated});
 
-  $IdCopyWith<$Res> get id;
   $CreatedCopyWith<$Res> get dateTime;
-  $IcnfCopyWith<$Res>? get icnf;
   $CreatedCopyWith<$Res> get created;
   $CreatedCopyWith<$Res> get updated;
 }
@@ -144,16 +127,14 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
   @override
   $Res call({
     Object? id = null,
-    Object? datumId = null,
     Object? coords = null,
     Object? dateTime = null,
     Object? date = null,
     Object? hour = null,
     Object? location = null,
     Object? aerial = null,
-    Object? meiosAquaticos = null,
-    Object? man = null,
     Object? terrain = null,
+    Object? man = null,
     Object? district = null,
     Object? concelho = null,
     Object? freguesia = null,
@@ -162,30 +143,15 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
     Object? lng = null,
     Object? naturezaCode = null,
     Object? natureza = null,
-    Object? especieName = freezed,
-    Object? familiaName = freezed,
     Object? statusCode = null,
     Object? statusColor = null,
     Object? status = null,
     Object? important = null,
-    Object? localidade = null,
     Object? active = null,
     Object? sadoId = null,
     Object? sharepointId = null,
     Object? extra = freezed,
     Object? disappear = null,
-    Object? icnf = freezed,
-    Object? detailLocation = freezed,
-    Object? kml = freezed,
-    Object? kmlVost = freezed,
-    Object? pco = freezed,
-    Object? cos = freezed,
-    Object? heliFight = null,
-    Object? heliCoord = null,
-    Object? planeFight = null,
-    Object? anepcDirectUpdate = null,
-    Object? regiao = null,
-    Object? subRegiao = null,
     Object? created = null,
     Object? updated = null,
   }) {
@@ -193,10 +159,6 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id,
-      datumId: null == datumId
-          ? _value.datumId
-          : datumId // ignore: cast_nullable_to_non_nullable
               as String,
       coords: null == coords
           ? _value.coords
@@ -222,17 +184,13 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
           ? _value.aerial
           : aerial // ignore: cast_nullable_to_non_nullable
               as int,
-      meiosAquaticos: null == meiosAquaticos
-          ? _value.meiosAquaticos
-          : meiosAquaticos // ignore: cast_nullable_to_non_nullable
+      terrain: null == terrain
+          ? _value.terrain
+          : terrain // ignore: cast_nullable_to_non_nullable
               as int,
       man: null == man
           ? _value.man
           : man // ignore: cast_nullable_to_non_nullable
-              as int,
-      terrain: null == terrain
-          ? _value.terrain
-          : terrain // ignore: cast_nullable_to_non_nullable
               as int,
       district: null == district
           ? _value.district
@@ -266,14 +224,6 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
           ? _value.natureza
           : natureza // ignore: cast_nullable_to_non_nullable
               as String,
-      especieName: freezed == especieName
-          ? _value.especieName
-          : especieName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      familiaName: freezed == familiaName
-          ? _value.familiaName
-          : familiaName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       statusCode: null == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -290,10 +240,6 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
           ? _value.important
           : important // ignore: cast_nullable_to_non_nullable
               as bool,
-      localidade: null == localidade
-          ? _value.localidade
-          : localidade // ignore: cast_nullable_to_non_nullable
-              as String,
       active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
@@ -309,59 +255,11 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
       extra: freezed == extra
           ? _value.extra
           : extra // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       disappear: null == disappear
           ? _value.disappear
           : disappear // ignore: cast_nullable_to_non_nullable
               as bool,
-      icnf: freezed == icnf
-          ? _value.icnf
-          : icnf // ignore: cast_nullable_to_non_nullable
-              as Icnf?,
-      detailLocation: freezed == detailLocation
-          ? _value.detailLocation
-          : detailLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kml: freezed == kml
-          ? _value.kml
-          : kml // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      kmlVost: freezed == kmlVost
-          ? _value.kmlVost
-          : kmlVost // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      pco: freezed == pco
-          ? _value.pco
-          : pco // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      cos: freezed == cos
-          ? _value.cos
-          : cos // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      heliFight: null == heliFight
-          ? _value.heliFight
-          : heliFight // ignore: cast_nullable_to_non_nullable
-              as int,
-      heliCoord: null == heliCoord
-          ? _value.heliCoord
-          : heliCoord // ignore: cast_nullable_to_non_nullable
-              as int,
-      planeFight: null == planeFight
-          ? _value.planeFight
-          : planeFight // ignore: cast_nullable_to_non_nullable
-              as int,
-      anepcDirectUpdate: null == anepcDirectUpdate
-          ? _value.anepcDirectUpdate
-          : anepcDirectUpdate // ignore: cast_nullable_to_non_nullable
-              as bool,
-      regiao: null == regiao
-          ? _value.regiao
-          : regiao // ignore: cast_nullable_to_non_nullable
-              as String,
-      subRegiao: null == subRegiao
-          ? _value.subRegiao
-          : subRegiao // ignore: cast_nullable_to_non_nullable
-              as String,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -375,29 +273,9 @@ class _$FireCopyWithImpl<$Res, $Val extends Fire>
 
   @override
   @pragma('vm:prefer-inline')
-  $IdCopyWith<$Res> get id {
-    return $IdCopyWith<$Res>(_value.id, (value) {
-      return _then(_value.copyWith(id: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
   $CreatedCopyWith<$Res> get dateTime {
     return $CreatedCopyWith<$Res>(_value.dateTime, (value) {
       return _then(_value.copyWith(dateTime: value) as $Val);
-    });
-  }
-
-  @override
-  @pragma('vm:prefer-inline')
-  $IcnfCopyWith<$Res>? get icnf {
-    if (_value.icnf == null) {
-      return null;
-    }
-
-    return $IcnfCopyWith<$Res>(_value.icnf!, (value) {
-      return _then(_value.copyWith(icnf: value) as $Val);
     });
   }
 
@@ -426,17 +304,15 @@ abstract class _$$FireImplCopyWith<$Res> implements $FireCopyWith<$Res> {
   @override
   @useResult
   $Res call(
-      {Id id,
-      String datumId,
+      {String id,
       bool coords,
       Created dateTime,
       String date,
       String hour,
       String location,
       int aerial,
-      int meiosAquaticos,
-      int man,
       int terrain,
+      int man,
       String district,
       String concelho,
       String freguesia,
@@ -445,39 +321,20 @@ abstract class _$$FireImplCopyWith<$Res> implements $FireCopyWith<$Res> {
       double lng,
       String naturezaCode,
       String natureza,
-      dynamic especieName,
-      dynamic familiaName,
       int statusCode,
       String statusColor,
       String status,
       bool important,
-      String localidade,
       bool active,
       String sadoId,
       int sharepointId,
-      dynamic extra,
+      String? extra,
       bool disappear,
-      Icnf? icnf,
-      String? detailLocation,
-      dynamic kml,
-      dynamic kmlVost,
-      dynamic pco,
-      dynamic cos,
-      int heliFight,
-      int heliCoord,
-      int planeFight,
-      bool anepcDirectUpdate,
-      String regiao,
-      String subRegiao,
       Created created,
       Created updated});
 
   @override
-  $IdCopyWith<$Res> get id;
-  @override
   $CreatedCopyWith<$Res> get dateTime;
-  @override
-  $IcnfCopyWith<$Res>? get icnf;
   @override
   $CreatedCopyWith<$Res> get created;
   @override
@@ -495,16 +352,14 @@ class __$$FireImplCopyWithImpl<$Res>
   @override
   $Res call({
     Object? id = null,
-    Object? datumId = null,
     Object? coords = null,
     Object? dateTime = null,
     Object? date = null,
     Object? hour = null,
     Object? location = null,
     Object? aerial = null,
-    Object? meiosAquaticos = null,
-    Object? man = null,
     Object? terrain = null,
+    Object? man = null,
     Object? district = null,
     Object? concelho = null,
     Object? freguesia = null,
@@ -513,30 +368,15 @@ class __$$FireImplCopyWithImpl<$Res>
     Object? lng = null,
     Object? naturezaCode = null,
     Object? natureza = null,
-    Object? especieName = freezed,
-    Object? familiaName = freezed,
     Object? statusCode = null,
     Object? statusColor = null,
     Object? status = null,
     Object? important = null,
-    Object? localidade = null,
     Object? active = null,
     Object? sadoId = null,
     Object? sharepointId = null,
     Object? extra = freezed,
     Object? disappear = null,
-    Object? icnf = freezed,
-    Object? detailLocation = freezed,
-    Object? kml = freezed,
-    Object? kmlVost = freezed,
-    Object? pco = freezed,
-    Object? cos = freezed,
-    Object? heliFight = null,
-    Object? heliCoord = null,
-    Object? planeFight = null,
-    Object? anepcDirectUpdate = null,
-    Object? regiao = null,
-    Object? subRegiao = null,
     Object? created = null,
     Object? updated = null,
   }) {
@@ -544,10 +384,6 @@ class __$$FireImplCopyWithImpl<$Res>
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
-              as Id,
-      datumId: null == datumId
-          ? _value.datumId
-          : datumId // ignore: cast_nullable_to_non_nullable
               as String,
       coords: null == coords
           ? _value.coords
@@ -573,17 +409,13 @@ class __$$FireImplCopyWithImpl<$Res>
           ? _value.aerial
           : aerial // ignore: cast_nullable_to_non_nullable
               as int,
-      meiosAquaticos: null == meiosAquaticos
-          ? _value.meiosAquaticos
-          : meiosAquaticos // ignore: cast_nullable_to_non_nullable
+      terrain: null == terrain
+          ? _value.terrain
+          : terrain // ignore: cast_nullable_to_non_nullable
               as int,
       man: null == man
           ? _value.man
           : man // ignore: cast_nullable_to_non_nullable
-              as int,
-      terrain: null == terrain
-          ? _value.terrain
-          : terrain // ignore: cast_nullable_to_non_nullable
               as int,
       district: null == district
           ? _value.district
@@ -617,14 +449,6 @@ class __$$FireImplCopyWithImpl<$Res>
           ? _value.natureza
           : natureza // ignore: cast_nullable_to_non_nullable
               as String,
-      especieName: freezed == especieName
-          ? _value.especieName
-          : especieName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      familiaName: freezed == familiaName
-          ? _value.familiaName
-          : familiaName // ignore: cast_nullable_to_non_nullable
-              as dynamic,
       statusCode: null == statusCode
           ? _value.statusCode
           : statusCode // ignore: cast_nullable_to_non_nullable
@@ -641,10 +465,6 @@ class __$$FireImplCopyWithImpl<$Res>
           ? _value.important
           : important // ignore: cast_nullable_to_non_nullable
               as bool,
-      localidade: null == localidade
-          ? _value.localidade
-          : localidade // ignore: cast_nullable_to_non_nullable
-              as String,
       active: null == active
           ? _value.active
           : active // ignore: cast_nullable_to_non_nullable
@@ -660,59 +480,11 @@ class __$$FireImplCopyWithImpl<$Res>
       extra: freezed == extra
           ? _value.extra
           : extra // ignore: cast_nullable_to_non_nullable
-              as dynamic,
+              as String?,
       disappear: null == disappear
           ? _value.disappear
           : disappear // ignore: cast_nullable_to_non_nullable
               as bool,
-      icnf: freezed == icnf
-          ? _value.icnf
-          : icnf // ignore: cast_nullable_to_non_nullable
-              as Icnf?,
-      detailLocation: freezed == detailLocation
-          ? _value.detailLocation
-          : detailLocation // ignore: cast_nullable_to_non_nullable
-              as String?,
-      kml: freezed == kml
-          ? _value.kml
-          : kml // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      kmlVost: freezed == kmlVost
-          ? _value.kmlVost
-          : kmlVost // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      pco: freezed == pco
-          ? _value.pco
-          : pco // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      cos: freezed == cos
-          ? _value.cos
-          : cos // ignore: cast_nullable_to_non_nullable
-              as dynamic,
-      heliFight: null == heliFight
-          ? _value.heliFight
-          : heliFight // ignore: cast_nullable_to_non_nullable
-              as int,
-      heliCoord: null == heliCoord
-          ? _value.heliCoord
-          : heliCoord // ignore: cast_nullable_to_non_nullable
-              as int,
-      planeFight: null == planeFight
-          ? _value.planeFight
-          : planeFight // ignore: cast_nullable_to_non_nullable
-              as int,
-      anepcDirectUpdate: null == anepcDirectUpdate
-          ? _value.anepcDirectUpdate
-          : anepcDirectUpdate // ignore: cast_nullable_to_non_nullable
-              as bool,
-      regiao: null == regiao
-          ? _value.regiao
-          : regiao // ignore: cast_nullable_to_non_nullable
-              as String,
-      subRegiao: null == subRegiao
-          ? _value.subRegiao
-          : subRegiao // ignore: cast_nullable_to_non_nullable
-              as String,
       created: null == created
           ? _value.created
           : created // ignore: cast_nullable_to_non_nullable
@@ -730,16 +502,14 @@ class __$$FireImplCopyWithImpl<$Res>
 class _$FireImpl implements _Fire {
   const _$FireImpl(
       {required this.id,
-      required this.datumId,
       required this.coords,
       required this.dateTime,
       required this.date,
       required this.hour,
       required this.location,
       required this.aerial,
-      required this.meiosAquaticos,
-      required this.man,
       required this.terrain,
+      required this.man,
       required this.district,
       required this.concelho,
       required this.freguesia,
@@ -748,40 +518,24 @@ class _$FireImpl implements _Fire {
       required this.lng,
       required this.naturezaCode,
       required this.natureza,
-      required this.especieName,
-      required this.familiaName,
       required this.statusCode,
       required this.statusColor,
       required this.status,
       required this.important,
-      required this.localidade,
       required this.active,
       required this.sadoId,
       required this.sharepointId,
-      required this.extra,
+      this.extra,
       required this.disappear,
-      required this.icnf,
-      required this.detailLocation,
-      required this.kml,
-      required this.kmlVost,
-      required this.pco,
-      required this.cos,
-      required this.heliFight,
-      required this.heliCoord,
-      required this.planeFight,
-      required this.anepcDirectUpdate,
-      required this.regiao,
-      required this.subRegiao,
       required this.created,
       required this.updated});
 
   factory _$FireImpl.fromJson(Map<String, dynamic> json) =>
       _$$FireImplFromJson(json);
 
+// @JsonKey(name: "_id") required Id id,
   @override
-  final Id id;
-  @override
-  final String datumId;
+  final String id;
   @override
   final bool coords;
   @override
@@ -795,11 +549,10 @@ class _$FireImpl implements _Fire {
   @override
   final int aerial;
   @override
-  final int meiosAquaticos;
+  final int terrain;
+// required int meiosAquaticos,
   @override
   final int man;
-  @override
-  final int terrain;
   @override
   final String district;
   @override
@@ -814,22 +567,22 @@ class _$FireImpl implements _Fire {
   final double lng;
   @override
   final String naturezaCode;
+// 3101, 3103, 3105, 3107
   @override
   final String natureza;
-  @override
-  final dynamic especieName;
-  @override
-  final dynamic familiaName;
+// required dynamic especieName,
+// required dynamic familiaName,
   @override
   final int statusCode;
+// 3, 4, 5, 6
   @override
   final String statusColor;
+// Hexadecimal code representing colors, related with statusCode value.
   @override
   final String status;
   @override
   final bool important;
-  @override
-  final String localidade;
+// required String localidade,
   @override
   final bool active;
   @override
@@ -837,33 +590,21 @@ class _$FireImpl implements _Fire {
   @override
   final int sharepointId;
   @override
-  final dynamic extra;
+  final String? extra;
   @override
   final bool disappear;
-  @override
-  final Icnf? icnf;
-  @override
-  final String? detailLocation;
-  @override
-  final dynamic kml;
-  @override
-  final dynamic kmlVost;
-  @override
-  final dynamic pco;
-  @override
-  final dynamic cos;
-  @override
-  final int heliFight;
-  @override
-  final int heliCoord;
-  @override
-  final int planeFight;
-  @override
-  final bool anepcDirectUpdate;
-  @override
-  final String regiao;
-  @override
-  final String subRegiao;
+// required Icnf? icnf,
+// required String? detailLocation,
+// required dynamic kml,
+// required dynamic kmlVost,
+// required dynamic pco,
+// required dynamic cos,
+// required int heliFight,
+// required int heliCoord,
+// required int planeFight,
+// required bool anepcDirectUpdate,
+// required String regiao,
+// required String subRegiao,
   @override
   final Created created;
   @override
@@ -871,7 +612,7 @@ class _$FireImpl implements _Fire {
 
   @override
   String toString() {
-    return 'Fire(id: $id, datumId: $datumId, coords: $coords, dateTime: $dateTime, date: $date, hour: $hour, location: $location, aerial: $aerial, meiosAquaticos: $meiosAquaticos, man: $man, terrain: $terrain, district: $district, concelho: $concelho, freguesia: $freguesia, dico: $dico, lat: $lat, lng: $lng, naturezaCode: $naturezaCode, natureza: $natureza, especieName: $especieName, familiaName: $familiaName, statusCode: $statusCode, statusColor: $statusColor, status: $status, important: $important, localidade: $localidade, active: $active, sadoId: $sadoId, sharepointId: $sharepointId, extra: $extra, disappear: $disappear, icnf: $icnf, detailLocation: $detailLocation, kml: $kml, kmlVost: $kmlVost, pco: $pco, cos: $cos, heliFight: $heliFight, heliCoord: $heliCoord, planeFight: $planeFight, anepcDirectUpdate: $anepcDirectUpdate, regiao: $regiao, subRegiao: $subRegiao, created: $created, updated: $updated)';
+    return 'Fire(id: $id, coords: $coords, dateTime: $dateTime, date: $date, hour: $hour, location: $location, aerial: $aerial, terrain: $terrain, man: $man, district: $district, concelho: $concelho, freguesia: $freguesia, dico: $dico, lat: $lat, lng: $lng, naturezaCode: $naturezaCode, natureza: $natureza, statusCode: $statusCode, statusColor: $statusColor, status: $status, important: $important, active: $active, sadoId: $sadoId, sharepointId: $sharepointId, extra: $extra, disappear: $disappear, created: $created, updated: $updated)';
   }
 
   @override
@@ -880,7 +621,6 @@ class _$FireImpl implements _Fire {
         (other.runtimeType == runtimeType &&
             other is _$FireImpl &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.datumId, datumId) || other.datumId == datumId) &&
             (identical(other.coords, coords) || other.coords == coords) &&
             (identical(other.dateTime, dateTime) ||
                 other.dateTime == dateTime) &&
@@ -889,10 +629,8 @@ class _$FireImpl implements _Fire {
             (identical(other.location, location) ||
                 other.location == location) &&
             (identical(other.aerial, aerial) || other.aerial == aerial) &&
-            (identical(other.meiosAquaticos, meiosAquaticos) ||
-                other.meiosAquaticos == meiosAquaticos) &&
-            (identical(other.man, man) || other.man == man) &&
             (identical(other.terrain, terrain) || other.terrain == terrain) &&
+            (identical(other.man, man) || other.man == man) &&
             (identical(other.district, district) ||
                 other.district == district) &&
             (identical(other.concelho, concelho) ||
@@ -906,10 +644,6 @@ class _$FireImpl implements _Fire {
                 other.naturezaCode == naturezaCode) &&
             (identical(other.natureza, natureza) ||
                 other.natureza == natureza) &&
-            const DeepCollectionEquality()
-                .equals(other.especieName, especieName) &&
-            const DeepCollectionEquality()
-                .equals(other.familiaName, familiaName) &&
             (identical(other.statusCode, statusCode) ||
                 other.statusCode == statusCode) &&
             (identical(other.statusColor, statusColor) ||
@@ -917,33 +651,13 @@ class _$FireImpl implements _Fire {
             (identical(other.status, status) || other.status == status) &&
             (identical(other.important, important) ||
                 other.important == important) &&
-            (identical(other.localidade, localidade) ||
-                other.localidade == localidade) &&
             (identical(other.active, active) || other.active == active) &&
             (identical(other.sadoId, sadoId) || other.sadoId == sadoId) &&
             (identical(other.sharepointId, sharepointId) ||
                 other.sharepointId == sharepointId) &&
-            const DeepCollectionEquality().equals(other.extra, extra) &&
+            (identical(other.extra, extra) || other.extra == extra) &&
             (identical(other.disappear, disappear) ||
                 other.disappear == disappear) &&
-            (identical(other.icnf, icnf) || other.icnf == icnf) &&
-            (identical(other.detailLocation, detailLocation) ||
-                other.detailLocation == detailLocation) &&
-            const DeepCollectionEquality().equals(other.kml, kml) &&
-            const DeepCollectionEquality().equals(other.kmlVost, kmlVost) &&
-            const DeepCollectionEquality().equals(other.pco, pco) &&
-            const DeepCollectionEquality().equals(other.cos, cos) &&
-            (identical(other.heliFight, heliFight) ||
-                other.heliFight == heliFight) &&
-            (identical(other.heliCoord, heliCoord) ||
-                other.heliCoord == heliCoord) &&
-            (identical(other.planeFight, planeFight) ||
-                other.planeFight == planeFight) &&
-            (identical(other.anepcDirectUpdate, anepcDirectUpdate) ||
-                other.anepcDirectUpdate == anepcDirectUpdate) &&
-            (identical(other.regiao, regiao) || other.regiao == regiao) &&
-            (identical(other.subRegiao, subRegiao) ||
-                other.subRegiao == subRegiao) &&
             (identical(other.created, created) || other.created == created) &&
             (identical(other.updated, updated) || other.updated == updated));
   }
@@ -953,16 +667,14 @@ class _$FireImpl implements _Fire {
   int get hashCode => Object.hashAll([
         runtimeType,
         id,
-        datumId,
         coords,
         dateTime,
         date,
         hour,
         location,
         aerial,
-        meiosAquaticos,
-        man,
         terrain,
+        man,
         district,
         concelho,
         freguesia,
@@ -971,30 +683,15 @@ class _$FireImpl implements _Fire {
         lng,
         naturezaCode,
         natureza,
-        const DeepCollectionEquality().hash(especieName),
-        const DeepCollectionEquality().hash(familiaName),
         statusCode,
         statusColor,
         status,
         important,
-        localidade,
         active,
         sadoId,
         sharepointId,
-        const DeepCollectionEquality().hash(extra),
+        extra,
         disappear,
-        icnf,
-        detailLocation,
-        const DeepCollectionEquality().hash(kml),
-        const DeepCollectionEquality().hash(kmlVost),
-        const DeepCollectionEquality().hash(pco),
-        const DeepCollectionEquality().hash(cos),
-        heliFight,
-        heliCoord,
-        planeFight,
-        anepcDirectUpdate,
-        regiao,
-        subRegiao,
         created,
         updated
       ]);
@@ -1015,17 +712,15 @@ class _$FireImpl implements _Fire {
 
 abstract class _Fire implements Fire {
   const factory _Fire(
-      {required final Id id,
-      required final String datumId,
+      {required final String id,
       required final bool coords,
       required final Created dateTime,
       required final String date,
       required final String hour,
       required final String location,
       required final int aerial,
-      required final int meiosAquaticos,
-      required final int man,
       required final int terrain,
+      required final int man,
       required final String district,
       required final String concelho,
       required final String freguesia,
@@ -1034,39 +729,22 @@ abstract class _Fire implements Fire {
       required final double lng,
       required final String naturezaCode,
       required final String natureza,
-      required final dynamic especieName,
-      required final dynamic familiaName,
       required final int statusCode,
       required final String statusColor,
       required final String status,
       required final bool important,
-      required final String localidade,
       required final bool active,
       required final String sadoId,
       required final int sharepointId,
-      required final dynamic extra,
+      final String? extra,
       required final bool disappear,
-      required final Icnf? icnf,
-      required final String? detailLocation,
-      required final dynamic kml,
-      required final dynamic kmlVost,
-      required final dynamic pco,
-      required final dynamic cos,
-      required final int heliFight,
-      required final int heliCoord,
-      required final int planeFight,
-      required final bool anepcDirectUpdate,
-      required final String regiao,
-      required final String subRegiao,
       required final Created created,
       required final Created updated}) = _$FireImpl;
 
   factory _Fire.fromJson(Map<String, dynamic> json) = _$FireImpl.fromJson;
 
-  @override
-  Id get id;
-  @override
-  String get datumId;
+  @override // @JsonKey(name: "_id") required Id id,
+  String get id;
   @override
   bool get coords;
   @override
@@ -1080,11 +758,9 @@ abstract class _Fire implements Fire {
   @override
   int get aerial;
   @override
-  int get meiosAquaticos;
-  @override
-  int get man;
-  @override
   int get terrain;
+  @override // required int meiosAquaticos,
+  int get man;
   @override
   String get district;
   @override
@@ -1099,57 +775,39 @@ abstract class _Fire implements Fire {
   double get lng;
   @override
   String get naturezaCode;
-  @override
+  @override // 3101, 3103, 3105, 3107
   String get natureza;
-  @override
-  dynamic get especieName;
-  @override
-  dynamic get familiaName;
-  @override
+  @override // required dynamic especieName,
+// required dynamic familiaName,
   int get statusCode;
-  @override
+  @override // 3, 4, 5, 6
   String get statusColor;
-  @override
+  @override // Hexadecimal code representing colors, related with statusCode value.
   String get status;
   @override
   bool get important;
-  @override
-  String get localidade;
-  @override
+  @override // required String localidade,
   bool get active;
   @override
   String get sadoId;
   @override
   int get sharepointId;
   @override
-  dynamic get extra;
+  String? get extra;
   @override
   bool get disappear;
-  @override
-  Icnf? get icnf;
-  @override
-  String? get detailLocation;
-  @override
-  dynamic get kml;
-  @override
-  dynamic get kmlVost;
-  @override
-  dynamic get pco;
-  @override
-  dynamic get cos;
-  @override
-  int get heliFight;
-  @override
-  int get heliCoord;
-  @override
-  int get planeFight;
-  @override
-  bool get anepcDirectUpdate;
-  @override
-  String get regiao;
-  @override
-  String get subRegiao;
-  @override
+  @override // required Icnf? icnf,
+// required String? detailLocation,
+// required dynamic kml,
+// required dynamic kmlVost,
+// required dynamic pco,
+// required dynamic cos,
+// required int heliFight,
+// required int heliCoord,
+// required int planeFight,
+// required bool anepcDirectUpdate,
+// required String regiao,
+// required String subRegiao,
   Created get created;
   @override
   Created get updated;

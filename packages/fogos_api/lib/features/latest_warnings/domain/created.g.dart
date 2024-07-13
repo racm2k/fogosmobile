@@ -7,7 +7,11 @@ part of 'created.dart';
 // **************************************************************************
 
 _$CreatedImpl _$$CreatedImplFromJson(Map<String, dynamic> json) =>
-    _$CreatedImpl();
+    _$CreatedImpl(
+      sec: (json['sec'] as num).toInt(),
+    );
 
 Map<String, dynamic> _$$CreatedImplToJson(_$CreatedImpl instance) =>
-    <String, dynamic>{};
+    <String, dynamic>{
+      'sec': instance.sec,
+    };

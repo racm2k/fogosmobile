@@ -20,13 +20,19 @@ Created _$CreatedFromJson(Map<String, dynamic> json) {
 
 /// @nodoc
 mixin _$Created {
+  int get sec => throw _privateConstructorUsedError;
+
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CreatedCopyWith<Created> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
 abstract class $CreatedCopyWith<$Res> {
   factory $CreatedCopyWith(Created value, $Res Function(Created) then) =
       _$CreatedCopyWithImpl<$Res, Created>;
+  @useResult
+  $Res call({int sec});
 }
 
 /// @nodoc
@@ -38,13 +44,29 @@ class _$CreatedCopyWithImpl<$Res, $Val extends Created>
   final $Val _value;
   // ignore: unused_field
   final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sec = null,
+  }) {
+    return _then(_value.copyWith(
+      sec: null == sec
+          ? _value.sec
+          : sec // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
 }
 
 /// @nodoc
-abstract class _$$CreatedImplCopyWith<$Res> {
+abstract class _$$CreatedImplCopyWith<$Res> implements $CreatedCopyWith<$Res> {
   factory _$$CreatedImplCopyWith(
           _$CreatedImpl value, $Res Function(_$CreatedImpl) then) =
       __$$CreatedImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int sec});
 }
 
 /// @nodoc
@@ -54,30 +76,54 @@ class __$$CreatedImplCopyWithImpl<$Res>
   __$$CreatedImplCopyWithImpl(
       _$CreatedImpl _value, $Res Function(_$CreatedImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? sec = null,
+  }) {
+    return _then(_$CreatedImpl(
+      sec: null == sec
+          ? _value.sec
+          : sec // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
 }
 
 /// @nodoc
 @JsonSerializable()
 class _$CreatedImpl implements _Created {
-  _$CreatedImpl();
+  _$CreatedImpl({required this.sec});
 
   factory _$CreatedImpl.fromJson(Map<String, dynamic> json) =>
       _$$CreatedImplFromJson(json);
 
   @override
+  final int sec;
+
+  @override
   String toString() {
-    return 'Created()';
+    return 'Created(sec: $sec)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _$CreatedImpl);
+        (other.runtimeType == runtimeType &&
+            other is _$CreatedImpl &&
+            (identical(other.sec, sec) || other.sec == sec));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, sec);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreatedImplCopyWith<_$CreatedImpl> get copyWith =>
+      __$$CreatedImplCopyWithImpl<_$CreatedImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -88,7 +134,14 @@ class _$CreatedImpl implements _Created {
 }
 
 abstract class _Created implements Created {
-  factory _Created() = _$CreatedImpl;
+  factory _Created({required final int sec}) = _$CreatedImpl;
 
   factory _Created.fromJson(Map<String, dynamic> json) = _$CreatedImpl.fromJson;
+
+  @override
+  int get sec;
+  @override
+  @JsonKey(ignore: true)
+  _$$CreatedImplCopyWith<_$CreatedImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }
