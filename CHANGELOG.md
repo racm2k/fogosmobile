@@ -3,6 +3,47 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-07-13
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`fogos_api` - `v0.0.2`](#fogos_api---v002)
+ - [`fogospt` - `v1.1.0`](#fogospt---v110)
+ - [`fogospt_admin` - `v1.1.0`](#fogospt_admin---v110)
+ - [`warnings_api` - `v0.0.2`](#warnings_api---v002)
+
+---
+
+#### `fogos_api` - `v0.0.2`
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+
+#### `fogospt` - `v1.1.0`
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+ - **FEAT**: Add Melos. ([4a167ebe](https://github.com/FogosPT/fogospt.git/commit/4a167ebe3d33677cf2b5bcd64770f8b7701922fc))
+
+#### `fogospt_admin` - `v1.1.0`
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+
+#### `warnings_api` - `v0.0.2`
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+
+
 ## 2024-03-17
 
 ### Changes

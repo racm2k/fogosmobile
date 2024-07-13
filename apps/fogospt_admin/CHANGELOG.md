@@ -1,3 +1,8 @@
+## 1.1.0
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+
 ## 1.0.3
 
  - **REFACTOR**: remove analysis options ([#176](https://github.com/FogosPT/fogospt.git/issues/176)). ([103bb892](https://github.com/FogosPT/fogospt.git/commit/103bb892c4a49c3e50be2442ddc530e367394f90))

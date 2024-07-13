@@ -1,3 +1,8 @@
+## 0.0.2
+
+ - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
+ - **FEAT**: add latest fires repository. ([90ebbcfe](https://github.com/FogosPT/fogospt.git/commit/90ebbcfe65ff31f15ea8f1d8cc95d841ab09e7b9))
+
 ## 0.0.1+2
 
  - **REFACTOR**: format files and update dependencies. ([73f6ba83](https://github.com/FogosPT/fogospt.git/commit/73f6ba83afae33b0e7bb3f642975d359fbe4b07a))
