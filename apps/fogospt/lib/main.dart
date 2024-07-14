@@ -3,6 +3,6 @@ import 'package:fogos_api/shared/dependency_injection.dart';
 import 'package:fogospt/app.dart';
 
 void main() {
-  setupDependencyInjection();
+  setupFogosAPIDependencyInjection();
   runApp(const FogosApp());
 }

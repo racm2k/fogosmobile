@@ -1,5 +1,7 @@
 import 'package:flutter/foundation.dart';
 
+/// TODO(): Move to shared package
+
 void log(Object x) {
   if (!kDebugMode) debugPrint("$x");
 }
