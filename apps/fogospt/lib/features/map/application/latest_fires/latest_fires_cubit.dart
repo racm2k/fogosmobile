@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import 'package:fogospt/features/map/application/latest_fires_state.dart';
+import 'package:fogospt/features/map/application/latest_fires/latest_fires_state.dart';
 import 'package:fogospt/features/map/data/latest_fires_service.dart';
 
 class LatestFiresCubit extends Cubit<LatestFiresState> {

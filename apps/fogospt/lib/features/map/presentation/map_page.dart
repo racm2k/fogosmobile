@@ -2,70 +2,96 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:fogos_api/constants/logger.dart';
-import 'package:fogospt/features/map/application/latest_fires_cubit.dart';
-import 'package:fogospt/features/map/application/latest_fires_state.dart';
-import 'package:latlong2/latlong.dart';
+import 'package:fogospt/features/map/application/flutter_map_markers.dart';
+import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
+import 'package:fogospt/features/map/application/latest_fires/latest_fires_state.dart';
+import 'package:fogospt/features/map/flutter_map_configuration.dart';
 
 class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: BlocBuilder<LatestFiresCubit, LatestFiresState>(
-          builder: (context, state) {
-            return state.when(
-              initial: () {
-                context.read<LatestFiresCubit>().fetchLatestFires();
-                return Center(child: CircularProgressIndicator());
-              },
-              loading: () => Center(child: CircularProgressIndicator()),
-              loaded: (fires) {
-                log(fires);
-                return Stack(children: [
-                  FlutterMap(
-                    options: MapOptions(
-                      initialCenter: LatLng(38.736946, -9.142685),
-                      initialZoom: 13.0,
-                    ),
-                    children: [
-                      TileLayer(
-                        urlTemplate:
-                            "https://api.mapbox.com/styles/v1/fogospt/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}",
-                        additionalOptions: {
-                          "accessToken": "",
-                          'id': 'cjgppvcdp00aa2spjclz9sjst',
-                        },
-                        retinaMode: true,
-                      ),
-                      MarkerLayer(
-                        markers: [
-                          ...fires.data
-                              .map(
-                                (fire) => Marker(
-                                  point: LatLng(fire.lat, fire.lng),
-                                  child: GestureDetector(
-                                    onTap: () {
-                                      log('tap');
-                                    },
-                                    child: Icon(
-                                      Icons.fireplace,
-                                      color: Colors.red,
-                                    ),
-                                  ),
-                                ),
-                              )
-                              .toList()
-                        ],
-                      )
-                    ],
-                  ),
-                ]);
-              },
-              error: () => Text('error'),
-            );
-          },
-        ),
+      body: BlocBuilder<LatestFiresCubit, LatestFiresState>(
+        builder: (context, state) {
+          return state.when(
+            initial: () {
+              context.read<LatestFiresCubit>().fetchLatestFires();
+              return MapPageInitialView();
+            },
+            loading: () => MapPageLoadingView(),
+            loaded: (fires) {
+              log(fires);
+              FlutterMapMarkers mapMarkers = FlutterMapMarkers(
+                fires: fires,
+                onMarkerTapped: (fire) {
+                  log(fire);
+                },
+              );
+              return MapPageView(mapMarkers: mapMarkers);
+            },
+            error: () => MapPageErrorView(),
+          );
+        },
       ),
     );
+  }
+}
+
+class MapPageView extends StatelessWidget {
+  const MapPageView({
+    super.key,
+    required this.mapMarkers,
+  });
+
+  final FlutterMapMarkers mapMarkers;
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        FlutterMap(
+          options: FlutterMapConfiguration.getMapOptions(),
+          children: [
+            FlutterMapConfiguration.getTileLayer(),
+            MarkerLayer(
+              markers: mapMarkers.processMarkers(),
+            )
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class MapPageErrorView extends StatelessWidget {
+  const MapPageErrorView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('error');
+  }
+}
+
+class MapPageLoadingView extends StatelessWidget {
+  const MapPageLoadingView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: CircularProgressIndicator());
+  }
+}
+
+class MapPageInitialView extends StatelessWidget {
+  const MapPageInitialView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: CircularProgressIndicator());
   }
 }

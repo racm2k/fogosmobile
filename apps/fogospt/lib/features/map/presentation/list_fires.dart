@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fogos_api/constants/logger.dart';
-import 'package:fogospt/features/map/application/latest_fires_cubit.dart';
-import 'package:fogospt/features/map/application/latest_fires_state.dart';
+import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
+import 'package:fogospt/features/map/application/latest_fires/latest_fires_state.dart';
 
 class ListFiresPage extends StatelessWidget {
   @override
