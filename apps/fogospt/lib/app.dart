@@ -6,6 +6,7 @@ import 'package:fogos_api/networking/fogos_api.dart';
 import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
 import 'package:fogospt/features/map/data/latest_fires_service.dart';
 import 'package:fogospt/routing/route.dart';
+import 'package:responsive_framework/responsive_framework.dart';
 
 class FogosApp extends StatelessWidget {
   const FogosApp({super.key});
@@ -22,7 +23,20 @@ class FogosApp extends StatelessWidget {
           ),
         ),
       ),
-      child: MaterialApp.router(routerConfig: router),
+      child: MaterialApp.router(
+        routerConfig: router,
+        builder: (context, child) {
+          return ResponsiveBreakpoints.builder(
+            child: child!,
+            breakpoints: [
+              const Breakpoint(start: 0, end: 450, name: MOBILE),
+              const Breakpoint(start: 451, end: 800, name: TABLET),
+              const Breakpoint(start: 801, end: 1920, name: DESKTOP),
+              const Breakpoint(start: 1921, end: double.infinity, name: '4K'),
+            ],
+          );
+        },
+      ),
     );
   }
 }
