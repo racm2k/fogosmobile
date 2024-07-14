@@ -230,6 +230,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "get_it",
+      "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/get_it-7.7.0",
+      "packageUri": "lib/",
+      "languageVersion": "3.0"
+    },
+    {
       "name": "glob",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/glob-2.1.2",
       "packageUri": "lib/",
@@ -596,7 +602,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-07-14T14:46:24.926671Z",
+  "generated": "2024-07-14T14:53:48.095763Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

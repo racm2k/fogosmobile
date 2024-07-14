@@ -1,5 +1,5 @@
 name: fogos_api
-description: "A new Flutter package project."
+description: "This package holds everything related to Fogos API"
 version: 0.0.2
 publish_to: none
 
@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   freezed_annotation: ^2.4.3
+  get_it: ^7.7.0
   http: ^1.2.1
   json_annotation: ^4.9.0
   warnings_api: 0.0.2
