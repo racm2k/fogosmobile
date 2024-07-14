@@ -35,6 +35,27 @@ class MapPage extends StatelessWidget {
                           "accessToken": "",
                           'id': 'cjgppvcdp00aa2spjclz9sjst',
                         },
+                        retinaMode: true,
+                      ),
+                      MarkerLayer(
+                        markers: [
+                          ...fires.data
+                              .map(
+                                (fire) => Marker(
+                                  point: LatLng(fire.lat, fire.lng),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      log('tap');
+                                    },
+                                    child: Icon(
+                                      Icons.fireplace,
+                                      color: Colors.red,
+                                    ),
+                                  ),
+                                ),
+                              )
+                              .toList()
+                        ],
                       )
                     ],
                   ),
