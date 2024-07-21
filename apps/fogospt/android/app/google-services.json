@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "970378987492",
+    "project_id": "fogospt-dev",
+    "storage_bucket": "fogospt-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970378987492:android:0b74831f0ebfb72108a9f1",
+        "android_client_info": {
+          "package_name": "com.example.fogospt"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA-Eyn8CsEyuacO6N86KdEcoxdoGqvzO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970378987492:android:133bba026ee7efc208a9f1",
+        "android_client_info": {
+          "package_name": "com.tomahock.fogos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAA-Eyn8CsEyuacO6N86KdEcoxdoGqvzO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
