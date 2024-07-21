@@ -17,8 +17,9 @@ class FlutterMapConfiguration {
       urlTemplate:
           "https://api.mapbox.com/styles/v1/fogospt/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}",
       additionalOptions: {
-        "accessToken": "",
-        'id': 'cjgppvcdp00aa2spjclz9sjst',
+        "accessToken":
+            const String.fromEnvironment('MAPBOX_ACCESS_TOKEN', defaultValue: "-"),
+        'id': const String.fromEnvironment('MAPBOX_ACCESS_ID', defaultValue: "-"),
       },
       retinaMode: true,
     );
