@@ -1,4 +1,4 @@
-package com.example.fogospt_admin
+package com.tomahock.fogos.fogospt_admin
 
 import io.flutter.embedding.android.FlutterActivity
 

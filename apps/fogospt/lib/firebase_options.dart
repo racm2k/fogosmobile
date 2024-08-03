@@ -70,6 +70,6 @@ class DefaultFirebaseOptions {
     messagingSenderId: '970378987492',
     projectId: 'fogospt-dev',
     storageBucket: 'fogospt-dev.appspot.com',
-    iosBundleId: 'com.example.fogospt',
+    iosBundleId: 'com.tomahock.fogos',
   );
 }

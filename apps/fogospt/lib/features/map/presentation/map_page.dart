@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:fogos_api/constants/logger.dart';
+import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogospt/features/map/application/flutter_map_markers.dart';
 import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
 import 'package:fogospt/features/map/application/latest_fires/latest_fires_state.dart';
 import 'package:fogospt/features/map/flutter_map_configuration.dart';
+import 'package:go_router/go_router.dart';
 
 class MapPage extends StatelessWidget {
   @override
@@ -23,8 +25,9 @@ class MapPage extends StatelessWidget {
               log(fires);
               FlutterMapMarkers mapMarkers = FlutterMapMarkers(
                 fires: fires,
-                onMarkerTapped: (fire) {
+                onMarkerTapped: (Fire fire) {
                   log(fire);
+                  context.go('/warning-detail', extra: fire);
                 },
               );
               return MapPageView(mapMarkers: mapMarkers);

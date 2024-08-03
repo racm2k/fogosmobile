@@ -9,16 +9,16 @@ class FlutterMapConfiguration {
     return MapOptions(
       initialCenter: centerOfPortugal,
       initialZoom: initialZoom,
-      cameraConstraint: CameraConstraint.contain(
-        bounds: LatLngBounds(
-          LatLng(48.0, -28),
-          LatLng(27.0, -9),
-        ),
-      ),
-      initialCameraFit: CameraFit.coordinates(coordinates: [
-        LatLng(48.0, -28),
-        LatLng(27.0, -9),
-      ]),
+      // cameraConstraint: CameraConstraint.contain(
+      //   bounds: LatLngBounds(
+      //     LatLng(48.0, -28),
+      //     LatLng(27.0, -9),
+      //   ),
+      // ),
+      // initialCameraFit: CameraFit.coordinates(coordinates: [
+      //   LatLng(48.0, -28),
+      //   LatLng(27.0, -9),
+      // ]),
     );
   }
 
