@@ -1,4 +1,3 @@
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fogos_api/features/latest_warnings/data/fires_repository.dart';
@@ -7,7 +6,6 @@ import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit
 import 'package:fogospt/features/map/data/latest_fires_service.dart';
 import 'package:fogospt/routing/route.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
 
 class FogosApp extends StatelessWidget {
   const FogosApp({super.key});

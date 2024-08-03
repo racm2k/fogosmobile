@@ -366,7 +366,7 @@ packages:
       path: "../../packages/fogos_api"
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   freezed:
     dependency: "direct main"
     description:
@@ -866,7 +866,7 @@ packages:
       path: "../../packages/warnings_api"
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.3"
   watcher:
     dependency: transitive
     description:
