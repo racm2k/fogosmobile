@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
+import 'package:fogospt/features/map/presentation/marker/marker_importance.dart';
 import 'package:fogospt/features/map/presentation/marker/warning_marker.dart';
 import 'package:latlong2/latlong.dart';
 
@@ -35,6 +36,8 @@ class FlutterMapMarkers {
           point: LatLng(fire.lat, fire.lng),
           onTap: () => onMarkerTapped(fire),
           type: WarningMarkerType.fire,
+          importance:
+              fire.important ? MarkerImportance.high : MarkerImportance.medium,
         ),
       );
     }

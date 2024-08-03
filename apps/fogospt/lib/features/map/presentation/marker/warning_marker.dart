@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:fogospt/features/map/presentation/marker/marker_importance.dart';
 import 'package:latlong2/latlong.dart';
 
 typedef MarkerTapped = void Function();
@@ -42,11 +43,12 @@ class WarningMarker extends Marker {
     required LatLng point,
     required WarningMarkerType type,
     required MarkerTapped? onTap,
+    required MarkerImportance importance,
   }) : super(
           child: WarningMarkerWidget(type: type, onTap: onTap),
           point: point,
-          width: 20,
-          height: 20,
+          width: importance.size,
+          height: importance.size,
         );
 }
 
