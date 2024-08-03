@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
+import 'package:fogospt/features/map/presentation/marker/warning_marker.dart';
 import 'package:latlong2/latlong.dart';
 
 typedef MarkerTapped = void Function(Fire fire);
@@ -24,21 +24,17 @@ class FlutterMapMarkers {
     this.markerIcon = _defaultMarkerIcon,
   });
 
-  List<Marker> processMarkers({bool isActive = true}) {
-    final List<Marker> markers = [];
+  List<WarningMarker> processMarkers({bool isActive = true}) {
+    final List<WarningMarker> markers = [];
 
     for (final fire in fires.data.where(
       (fire) => fire.active == isActive,
     )) {
       markers.add(
-        Marker(
+        WarningMarker(
           point: LatLng(fire.lat, fire.lng),
-          child: GestureDetector(
-            onTap: () {
-              onMarkerTapped(fire);
-            },
-            child: markerIcon,
-          ),
+          onTap: () => onMarkerTapped(fire),
+          type: WarningMarkerType.fire,
         ),
       );
     }
