@@ -41,7 +41,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 
 android {
-         namespace 'com.example.fogosmobile'
+         namespace 'com.tomahock.fogosmobile'
 
     compileSdkVersion 34
 
