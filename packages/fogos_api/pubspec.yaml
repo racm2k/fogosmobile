@@ -1,6 +1,6 @@
 name: fogos_api
 description: "This package holds everything related to Fogos API"
-version: 0.0.2
+version: 0.0.3
 publish_to: none
 
 environment:
@@ -13,7 +13,7 @@ dependencies:
   get_it: ^7.7.0
   http: ^1.2.1
   json_annotation: ^4.9.0
-  warnings_api: 0.0.2
+  warnings_api: 0.0.3
 
 dev_dependencies:
   flutter_test:

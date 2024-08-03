@@ -1,3 +1,12 @@
+## 0.0.3
+
+ - **FEAT**: FCM configuration. ([09247d74](https://github.com/FogosPT/fogospt.git/commit/09247d74826def88c906f670cfb81036a356a3ba))
+ - **FEAT**: env variables working. ([eee4d0a9](https://github.com/FogosPT/fogospt.git/commit/eee4d0a95154c68b1be5d7424bea6ed49c77ec7c))
+ - **FEAT**: add get_it dependency injection. ([ff8c9d0f](https://github.com/FogosPT/fogospt.git/commit/ff8c9d0f51bcf0db5018824de944b51c935cae57))
+ - **FEAT**: add Responsive Framework. ([be4eaa94](https://github.com/FogosPT/fogospt.git/commit/be4eaa94a18f77849f01976599d0168f1b84b459))
+ - **FEAT**: add MapBox. ([e7df245e](https://github.com/FogosPT/fogospt.git/commit/e7df245ebcf81c15f92f96304699dacd9e4d4868))
+ - **FEAT**: add MapPage. ([10ddc7a9](https://github.com/FogosPT/fogospt.git/commit/10ddc7a95ce8d3096503fee331a4fb9efbb763ac))
+
 ## 0.0.2
 
  - **FEAT**: add tests for fire and fires deserialization. ([f1c8f9cb](https://github.com/FogosPT/fogospt.git/commit/f1c8f9cb9a70db1d0fafa126ba58b7fda7657bd9))
