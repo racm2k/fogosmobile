@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_map/flutter_map.dart';
 import 'package:fogos_api/constants/logger.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogospt/features/map/application/flutter_map_markers.dart';
 import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
 import 'package:fogospt/features/map/application/latest_fires/latest_fires_state.dart';
-import 'package:fogospt/features/map/flutter_map_configuration.dart';
+import 'package:fogospt/features/map/presentation/map_page_error_view.dart';
+import 'package:fogospt/features/map/presentation/map_page_initial_view.dart';
+import 'package:fogospt/features/map/presentation/map_page_loading_view.dart';
+import 'package:fogospt/features/map/presentation/map_page_modal_content.dart';
+import 'package:fogospt/features/map/presentation/map_page_view.dart';
 import 'package:go_router/go_router.dart';
+import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 class MapPage extends StatelessWidget {
   @override
@@ -27,7 +31,7 @@ class MapPage extends StatelessWidget {
                 fires: fires,
                 onMarkerTapped: (Fire fire) {
                   log(fire);
-                  context.go('/warning-detail', extra: fire);
+                  showBottomModal(context, fire);
                 },
               );
               return MapPageView(mapMarkers: mapMarkers);
@@ -38,66 +42,38 @@ class MapPage extends StatelessWidget {
       ),
     );
   }
-}
 
-class MapPageView extends StatelessWidget {
-  const MapPageView({
-    super.key,
-    required this.mapMarkers,
-  });
-
-  final FlutterMapMarkers mapMarkers;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        FlutterMap(
-          options: FlutterMapConfiguration.getMapOptions(
-
-
-          ),
-          children: [
-            FlutterMapConfiguration.getTileLayer(),
-            MarkerLayer(
-              markers: mapMarkers.processMarkers(),
-            )
-          ],
-        ),
-      ],
+  Future<dynamic> showBottomModal(BuildContext context, Fire fire) {
+    return WoltModalSheet.show(
+      context: context,
+      pageListBuilder: (modalSheetcontext) {
+        return [
+          buildModalSheetPage(fire, modalSheetcontext),
+        ];
+      },
+      modalTypeBuilder: (context) => WoltBottomSheetType(),
     );
   }
-}
 
-class MapPageErrorView extends StatelessWidget {
-  const MapPageErrorView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('error');
-  }
-}
-
-class MapPageLoadingView extends StatelessWidget {
-  const MapPageLoadingView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: CircularProgressIndicator());
-  }
-}
-
-class MapPageInitialView extends StatelessWidget {
-  const MapPageInitialView({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Center(child: CircularProgressIndicator());
+  WoltModalSheetPage buildModalSheetPage(Fire fire, BuildContext context) {
+    return WoltModalSheetPage(
+      stickyActionBar: TextButton(
+        onPressed: () {
+          context.go('/warning-detail', extra: fire);
+          context.pop();
+        },
+        child: Text('Ver detalhes'),
+      ),
+      isTopBarLayerAlwaysVisible: true,
+      topBarTitle: Text(
+        fire.location,
+        style: TextStyle(
+          color: Colors.black,
+        ),
+      ),
+      child: MapPageModalContent(
+        fire: fire,
+      ),
+    );
   }
 }

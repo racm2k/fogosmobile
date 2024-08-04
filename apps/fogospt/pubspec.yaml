@@ -16,7 +16,6 @@ dependencies:
   go_router: ^14.2.1
 
   equatable: ^2.0.2
-  freezed: ^2.4.7
   sentry: ^7.18.0
 
   fogos_api: 0.0.3
@@ -32,6 +31,7 @@ dependencies:
   flutter_local_notifications: ^17.2.1+2
   flutter_svg: ^2.0.10+1
   dart_mappable: ^4.2.2
+  wolt_modal_sheet: ^0.8.0
   
 
 dev_dependencies:
