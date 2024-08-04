@@ -17,7 +17,8 @@ class NotificationHelpers {
       onDidReceiveLocalNotification:
           (int id, String? title, String? body, String? payload) async {
         //
-        print('onDidReceiveLocalNotification');
+        print(
+            'onDidReceiveLocalNotification\nid: $id\ntitle: $title\nbody: $body\npayload: $payload');
       },
     );
 
@@ -39,18 +40,17 @@ class NotificationHelpers {
 
   static Future<void> showNotification(RemoteMessage message) async {
     AndroidNotificationChannel channel = AndroidNotificationChannel(
-        message.notification!.android!.channelId.toString(),
-        message.notification!.android!.channelId.toString(),
-        importance: Importance.max,
-        showBadge: true,
-        playSound: true
-        // sound: RawResourceAndroidNotificationSound('jetsons_doorbel'),
-        );
+      message.notification!.android!.channelId?.toString() ?? "fogospt",
+      message.notification!.android!.channelId?.toString() ?? "fogospt",
+      importance: Importance.max,
+      showBadge: true,
+      playSound: true,
+    );
 
     AndroidNotificationDetails androidPlatformChannelDetails =
         AndroidNotificationDetails(
-      channel.id.toString(),
-      channel.name.toString(),
+      channel.id,
+      channel.name,
       channelDescription: "Fogos Notifications",
       importance: Importance.high,
       priority: Priority.high,
@@ -74,13 +74,18 @@ class NotificationHelpers {
     Future.delayed(
       Duration.zero,
       () async {
-        await notificationsPlugin.show(
-          message.hashCode,
-          message.notification!.title,
-          message.notification!.body,
-          notificationDetails,
-          payload: message.data.toString(),
-        );
+        try {
+          await notificationsPlugin.show(
+            message.hashCode,
+            message.notification!.title,
+            message.notification!.body,
+            notificationDetails,
+            payload: message.data.toString(),
+          );
+        } on Exception catch (e) {
+          print(e.toString());
+          // TODO
+        }
       },
     );
   }

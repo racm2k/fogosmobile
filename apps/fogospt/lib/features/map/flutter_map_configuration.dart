@@ -9,6 +9,10 @@ class FlutterMapConfiguration {
     return MapOptions(
       initialCenter: centerOfPortugal,
       initialZoom: initialZoom,
+      interactionOptions: InteractionOptions(
+        rotationThreshold: 0.0,
+        rotationWinGestures: MultiFingerGesture.none,
+      ),
       // cameraConstraint: CameraConstraint.contain(
       //   bounds: LatLngBounds(
       //     LatLng(48.0, -28),

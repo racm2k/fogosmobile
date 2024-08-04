@@ -53,7 +53,10 @@ class MapPageView extends StatelessWidget {
     return Stack(
       children: [
         FlutterMap(
-          options: FlutterMapConfiguration.getMapOptions(),
+          options: FlutterMapConfiguration.getMapOptions(
+
+
+          ),
           children: [
             FlutterMapConfiguration.getTileLayer(),
             MarkerLayer(

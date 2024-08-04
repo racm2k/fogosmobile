@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:fogos_api/constants/logger.dart';
+import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
 import 'package:fogos_api/networking/fogos_base_client.dart';
 
@@ -23,5 +24,25 @@ class FiresRepository {
     log(fires);
 
     return fires;
+  }
+
+  Future<Fire> getFireById(String id) async {
+    final response = await _fogosApi.getSingleFireInformation(id);
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to fetch fire information');
+    }
+
+    final body = json.decode(response.body);
+    log(body);
+
+    if (body['success']) {
+      final fire = Fire.fromJson(body['data']);
+      log(fire);
+
+      return fire;
+    } else {
+      throw Exception('Failed to fetch fire information');
+    }
   }
 }
