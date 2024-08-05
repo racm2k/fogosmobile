@@ -1,5 +1,6 @@
 import 'package:dart_mappable/dart_mappable.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
+import 'package:fogos_api/features/latest_warnings/domain/resources.dart';
 
 part 'warning_state.mapper.dart';
 
@@ -19,8 +20,10 @@ class Loading with LoadingMappable implements WarningState {
 @MappableClass()
 class WarningLoaded with WarningLoadedMappable implements WarningState {
   final Fire fire;
+  final List<Resources> resources;
   const WarningLoaded({
     required this.fire,
+    required this.resources,
   });
 }
 

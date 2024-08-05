@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:fogos_api/constants/logger.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
+import 'package:fogos_api/features/latest_warnings/domain/resources.dart';
 import 'package:fogos_api/networking/fogos_base_client.dart';
 
 class FiresRepository {
@@ -24,6 +25,29 @@ class FiresRepository {
     log(fires);
 
     return fires;
+  }
+
+  Future<List<Resources>> getResources(String id) async {
+    final response =
+        await _fogosApi.getFireHistoryResourcesManAerialTerrain(id);
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to fetch resources information');
+    }
+    final body = json.decode(response.body);
+    log(body);
+
+    if (body['success']) {
+      final data = body['data'] as List<dynamic>;
+      final resources = data
+          .map((item) => Resources.fromJson(item as Map<String, dynamic>))
+          .toList();
+      log(resources);
+
+      return resources;
+    } else {
+      throw Exception('Failed to fetch fire information');
+    }
   }
 
   Future<Fire> getFireById(String id) async {

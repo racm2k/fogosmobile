@@ -3,12 +3,11 @@
 // Do not manually edit this file.
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
-import 'dart:async' as _i6;
+import 'dart:async' as _i5;
 
 import 'package:fogos_api/networking/fogos_base_client.dart' as _i4;
 import 'package:http/http.dart' as _i3;
 import 'package:mockito/mockito.dart' as _i1;
-import 'package:mockito/src/dummies.dart' as _i5;
 import 'package:warnings_api/environment.dart' as _i2;
 
 // ignore_for_file: type=lint
@@ -49,19 +48,6 @@ class _FakeResponse_1 extends _i1.SmartFake implements _i3.Response {
 /// See the documentation for Mockito's code generation for more information.
 class MockFogosBaseClient extends _i1.Mock implements _i4.FogosBaseClient {
   @override
-  String get version => (super.noSuchMethod(
-        Invocation.getter(#version),
-        returnValue: _i5.dummyValue<String>(
-          this,
-          Invocation.getter(#version),
-        ),
-        returnValueForMissingStub: _i5.dummyValue<String>(
-          this,
-          Invocation.getter(#version),
-        ),
-      ) as String);
-
-  @override
   _i2.Environment get environment => (super.noSuchMethod(
         Invocation.getter(#environment),
         returnValue: _FakeEnvironment_0(
@@ -75,12 +61,21 @@ class MockFogosBaseClient extends _i1.Mock implements _i4.FogosBaseClient {
       ) as _i2.Environment);
 
   @override
-  _i6.Future<_i3.Response> listActiveFires() => (super.noSuchMethod(
+  set environment(_i2.Environment? _environment) => super.noSuchMethod(
+        Invocation.setter(
+          #environment,
+          _environment,
+        ),
+        returnValueForMissingStub: null,
+      );
+
+  @override
+  _i5.Future<_i3.Response> listActiveFires() => (super.noSuchMethod(
         Invocation.method(
           #listActiveFires,
           [],
         ),
-        returnValue: _i6.Future<_i3.Response>.value(_FakeResponse_1(
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_1(
           this,
           Invocation.method(
             #listActiveFires,
@@ -88,12 +83,109 @@ class MockFogosBaseClient extends _i1.Mock implements _i4.FogosBaseClient {
           ),
         )),
         returnValueForMissingStub:
-            _i6.Future<_i3.Response>.value(_FakeResponse_1(
+            _i5.Future<_i3.Response>.value(_FakeResponse_1(
           this,
           Invocation.method(
             #listActiveFires,
             [],
           ),
         )),
-      ) as _i6.Future<_i3.Response>);
+      ) as _i5.Future<_i3.Response>);
+
+  @override
+  _i5.Future<_i3.Response> getSingleFireInformation(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getSingleFireInformation,
+          [id],
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getSingleFireInformation,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getSingleFireInformation,
+            [id],
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+
+  @override
+  _i5.Future<_i3.Response> getFireRCMForTodayTomorrowAndAfter(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFireRCMForTodayTomorrowAndAfter,
+          [id],
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireRCMForTodayTomorrowAndAfter,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireRCMForTodayTomorrowAndAfter,
+            [id],
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+
+  @override
+  _i5.Future<_i3.Response> getFireHistoryResourcesManAerialTerrain(
+          String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFireHistoryResourcesManAerialTerrain,
+          [id],
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireHistoryResourcesManAerialTerrain,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireHistoryResourcesManAerialTerrain,
+            [id],
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
+
+  @override
+  _i5.Future<_i3.Response> getFireHistoryStatus(String? id) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #getFireHistoryStatus,
+          [id],
+        ),
+        returnValue: _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireHistoryStatus,
+            [id],
+          ),
+        )),
+        returnValueForMissingStub:
+            _i5.Future<_i3.Response>.value(_FakeResponse_1(
+          this,
+          Invocation.method(
+            #getFireHistoryStatus,
+            [id],
+          ),
+        )),
+      ) as _i5.Future<_i3.Response>);
 }

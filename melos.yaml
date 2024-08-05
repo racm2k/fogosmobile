@@ -47,3 +47,9 @@ scripts:
     exec: dart analyze .
   # fix:
   #   exec: dart fix . && dcm fix .
+
+  build:
+    exec: dart run build_runner build -d
+    description: Run build runner on the projects
+    packageFilters:
+      dependsOn: build_runner
