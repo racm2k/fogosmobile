@@ -31,12 +31,3 @@ Map<String, dynamic> _$$HistoryStatusImplToJson(_$HistoryStatusImpl instance) =>
       'created': instance.created,
       'updated': instance.updated,
     };
-
-_$AtedImpl _$$AtedImplFromJson(Map<String, dynamic> json) => _$AtedImpl(
-      sec: (json['sec'] as num).toInt(),
-    );
-
-Map<String, dynamic> _$$AtedImplToJson(_$AtedImpl instance) =>
-    <String, dynamic>{
-      'sec': instance.sec,
-    };

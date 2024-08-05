@@ -273,19 +273,23 @@ class WarningLoadedMapper extends ClassMapperBase<WarningLoaded> {
       v.historyStatuses;
   static const Field<WarningLoaded, List<HistoryStatus>> _f$historyStatuses =
       Field('historyStatuses', _$historyStatuses);
+  static List<RCM> _$rcm(WarningLoaded v) => v.rcm;
+  static const Field<WarningLoaded, List<RCM>> _f$rcm = Field('rcm', _$rcm);
 
   @override
   final MappableFields<WarningLoaded> fields = const {
     #fire: _f$fire,
     #resources: _f$resources,
     #historyStatuses: _f$historyStatuses,
+    #rcm: _f$rcm,
   };
 
   static WarningLoaded _instantiate(DecodingData data) {
     return WarningLoaded(
         fire: data.dec(_f$fire),
         resources: data.dec(_f$resources),
-        historyStatuses: data.dec(_f$historyStatuses));
+        historyStatuses: data.dec(_f$historyStatuses),
+        rcm: data.dec(_f$rcm));
   }
 
   @override
@@ -345,11 +349,13 @@ abstract class WarningLoadedCopyWith<$R, $In extends WarningLoaded, $Out>
       get resources;
   ListCopyWith<$R, HistoryStatus,
       ObjectCopyWith<$R, HistoryStatus, HistoryStatus>> get historyStatuses;
+  ListCopyWith<$R, RCM, ObjectCopyWith<$R, RCM, RCM>> get rcm;
   @override
   $R call(
       {Fire? fire,
       List<Resources>? resources,
-      List<HistoryStatus>? historyStatuses});
+      List<HistoryStatus>? historyStatuses,
+      List<RCM>? rcm});
   WarningLoadedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -373,20 +379,28 @@ class _WarningLoadedCopyWithImpl<$R, $Out>
           (v, t) => ObjectCopyWith(v, $identity, t),
           (v) => call(historyStatuses: v));
   @override
+  ListCopyWith<$R, RCM, ObjectCopyWith<$R, RCM, RCM>> get rcm => ListCopyWith(
+      $value.rcm,
+      (v, t) => ObjectCopyWith(v, $identity, t),
+      (v) => call(rcm: v));
+  @override
   $R call(
           {Fire? fire,
           List<Resources>? resources,
-          List<HistoryStatus>? historyStatuses}) =>
+          List<HistoryStatus>? historyStatuses,
+          List<RCM>? rcm}) =>
       $apply(FieldCopyWithData({
         if (fire != null) #fire: fire,
         if (resources != null) #resources: resources,
-        if (historyStatuses != null) #historyStatuses: historyStatuses
+        if (historyStatuses != null) #historyStatuses: historyStatuses,
+        if (rcm != null) #rcm: rcm
       }));
   @override
   WarningLoaded $make(CopyWithData data) => WarningLoaded(
       fire: data.get(#fire, or: $value.fire),
       resources: data.get(#resources, or: $value.resources),
-      historyStatuses: data.get(#historyStatuses, or: $value.historyStatuses));
+      historyStatuses: data.get(#historyStatuses, or: $value.historyStatuses),
+      rcm: data.get(#rcm, or: $value.rcm));
 
   @override
   WarningLoadedCopyWith<$R2, WarningLoaded, $Out2> $chain<$R2, $Out2>(

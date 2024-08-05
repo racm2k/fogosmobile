@@ -1,3 +1,4 @@
+import 'package:fogos_api/features/latest_warnings/domain/ated.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'history_status.freezed.dart';
@@ -18,13 +19,4 @@ class HistoryStatus with _$HistoryStatus {
 
   factory HistoryStatus.fromJson(Map<String, dynamic> json) =>
       _$HistoryStatusFromJson(json);
-}
-
-@freezed
-class Ated with _$Ated {
-  const factory Ated({
-    required int sec,
-  }) = _Ated;
-
-  factory Ated.fromJson(Map<String, dynamic> json) => _$AtedFromJson(json);
 }

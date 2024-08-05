@@ -4,6 +4,7 @@ import 'package:fogos_api/constants/logger.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
 import 'package:fogos_api/features/latest_warnings/domain/history_status.dart';
+import 'package:fogos_api/features/latest_warnings/domain/rcm.dart';
 import 'package:fogos_api/features/latest_warnings/domain/resources.dart';
 import 'package:fogos_api/networking/fogos_base_client.dart';
 
@@ -89,6 +90,29 @@ class FiresRepository {
       log(historyStatus);
 
       return historyStatus;
+    } else {
+      throw Exception('Failed to fetch fire information');
+    }
+  }
+
+  Future<List<RCM>> getRCM(String id) async {
+    final response = await _fogosApi.getFireRCMForTodayTomorrowAndAfter(id);
+
+    if (response.statusCode != 200) {
+      throw Exception('Failed to fetch fire information');
+    }
+
+    final body = json.decode(response.body);
+    log(body);
+
+    if (body['success']) {
+      final data = body['data'] as List<dynamic>;
+      final rcm = data
+          .map((item) => RCM.fromJson(item as Map<String, dynamic>))
+          .toList();
+      log(rcm);
+
+      return rcm;
     } else {
       throw Exception('Failed to fetch fire information');
     }
