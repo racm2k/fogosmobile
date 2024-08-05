@@ -1,5 +1,6 @@
 import 'package:fogos_api/features/latest_warnings/data/fires_repository.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
+import 'package:fogos_api/features/latest_warnings/domain/history_status.dart';
 import 'package:fogos_api/features/latest_warnings/domain/resources.dart';
 
 class WarningService {
@@ -18,6 +19,14 @@ class WarningService {
   Future<List<Resources>> fetchResources(String id) async {
     try {
       return await firesRepository.getResources(id);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<List<HistoryStatus>> fetchHistoryStatuses(String id) async {
+    try {
+      return await firesRepository.getFireHistoryStatuses(id);
     } catch (e) {
       rethrow;
     }

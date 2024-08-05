@@ -13,7 +13,14 @@ class WarningCubit extends Cubit<WarningState> {
     try {
       final fire = await service.fetchFire(id);
       final resources = await service.fetchResources(id);
-      emit(WarningLoaded(fire: fire, resources: resources));
+      final historyStatuses = await service.fetchHistoryStatuses(id);
+      emit(
+        WarningLoaded(
+          fire: fire,
+          resources: resources,
+          historyStatuses: historyStatuses,
+        ),
+      );
     } catch (e) {
       emit(WarningFailed());
     }
