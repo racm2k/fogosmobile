@@ -266,14 +266,30 @@ class WarningLoadedMapper extends ClassMapperBase<WarningLoaded> {
 
   static Fire _$fire(WarningLoaded v) => v.fire;
   static const Field<WarningLoaded, Fire> _f$fire = Field('fire', _$fire);
+  static List<Resources> _$resources(WarningLoaded v) => v.resources;
+  static const Field<WarningLoaded, List<Resources>> _f$resources =
+      Field('resources', _$resources);
+  static List<HistoryStatus> _$historyStatuses(WarningLoaded v) =>
+      v.historyStatuses;
+  static const Field<WarningLoaded, List<HistoryStatus>> _f$historyStatuses =
+      Field('historyStatuses', _$historyStatuses);
+  static List<RCM> _$rcm(WarningLoaded v) => v.rcm;
+  static const Field<WarningLoaded, List<RCM>> _f$rcm = Field('rcm', _$rcm);
 
   @override
   final MappableFields<WarningLoaded> fields = const {
     #fire: _f$fire,
+    #resources: _f$resources,
+    #historyStatuses: _f$historyStatuses,
+    #rcm: _f$rcm,
   };
 
   static WarningLoaded _instantiate(DecodingData data) {
-    return WarningLoaded(fire: data.dec(_f$fire));
+    return WarningLoaded(
+        fire: data.dec(_f$fire),
+        resources: data.dec(_f$resources),
+        historyStatuses: data.dec(_f$historyStatuses),
+        rcm: data.dec(_f$rcm));
   }
 
   @override
@@ -329,8 +345,17 @@ extension WarningLoadedValueCopy<$R, $Out>
 
 abstract class WarningLoadedCopyWith<$R, $In extends WarningLoaded, $Out>
     implements WarningStateCopyWith<$R, $In, $Out> {
+  ListCopyWith<$R, Resources, ObjectCopyWith<$R, Resources, Resources>>
+      get resources;
+  ListCopyWith<$R, HistoryStatus,
+      ObjectCopyWith<$R, HistoryStatus, HistoryStatus>> get historyStatuses;
+  ListCopyWith<$R, RCM, ObjectCopyWith<$R, RCM, RCM>> get rcm;
   @override
-  $R call({Fire? fire});
+  $R call(
+      {Fire? fire,
+      List<Resources>? resources,
+      List<HistoryStatus>? historyStatuses,
+      List<RCM>? rcm});
   WarningLoadedCopyWith<$R2, $In, $Out2> $chain<$R2, $Out2>(Then<$Out2, $R2> t);
 }
 
@@ -343,11 +368,39 @@ class _WarningLoadedCopyWithImpl<$R, $Out>
   late final ClassMapperBase<WarningLoaded> $mapper =
       WarningLoadedMapper.ensureInitialized();
   @override
-  $R call({Fire? fire}) =>
-      $apply(FieldCopyWithData({if (fire != null) #fire: fire}));
+  ListCopyWith<$R, Resources, ObjectCopyWith<$R, Resources, Resources>>
+      get resources => ListCopyWith($value.resources,
+          (v, t) => ObjectCopyWith(v, $identity, t), (v) => call(resources: v));
   @override
-  WarningLoaded $make(CopyWithData data) =>
-      WarningLoaded(fire: data.get(#fire, or: $value.fire));
+  ListCopyWith<$R, HistoryStatus,
+          ObjectCopyWith<$R, HistoryStatus, HistoryStatus>>
+      get historyStatuses => ListCopyWith(
+          $value.historyStatuses,
+          (v, t) => ObjectCopyWith(v, $identity, t),
+          (v) => call(historyStatuses: v));
+  @override
+  ListCopyWith<$R, RCM, ObjectCopyWith<$R, RCM, RCM>> get rcm => ListCopyWith(
+      $value.rcm,
+      (v, t) => ObjectCopyWith(v, $identity, t),
+      (v) => call(rcm: v));
+  @override
+  $R call(
+          {Fire? fire,
+          List<Resources>? resources,
+          List<HistoryStatus>? historyStatuses,
+          List<RCM>? rcm}) =>
+      $apply(FieldCopyWithData({
+        if (fire != null) #fire: fire,
+        if (resources != null) #resources: resources,
+        if (historyStatuses != null) #historyStatuses: historyStatuses,
+        if (rcm != null) #rcm: rcm
+      }));
+  @override
+  WarningLoaded $make(CopyWithData data) => WarningLoaded(
+      fire: data.get(#fire, or: $value.fire),
+      resources: data.get(#resources, or: $value.resources),
+      historyStatuses: data.get(#historyStatuses, or: $value.historyStatuses),
+      rcm: data.get(#rcm, or: $value.rcm));
 
   @override
   WarningLoadedCopyWith<$R2, WarningLoaded, $Out2> $chain<$R2, $Out2>(
