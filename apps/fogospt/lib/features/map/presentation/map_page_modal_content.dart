@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
+import 'package:fogospt/constants/assets.dart';
+import 'package:fogospt/features/map/presentation/fire_see_more_modal.dart';
+import 'package:fogospt/widgets/resource_icon_value_widget.dart';
+import 'package:go_router/go_router.dart';
 
 class MapPageModalContent extends StatelessWidget {
   final Fire fire;
@@ -10,13 +14,28 @@ class MapPageModalContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        FireModalLocation(fire: fire),
-        FireModalStatus(fire: fire),
-        FireModalResources(fire: fire),
-        FireModalUpdated(fire: fire),
-      ],
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          FireModalLocation(fire: fire),
+          FireModalStatus(fire: fire),
+          FireModalResources(fire: fire),
+          FireModalUpdated(fire: fire),
+          TextButton(
+            onPressed: () {
+              context.go('/warning-detail', extra: fire);
+              context.pop();
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                FireSeeMoreModal(fire: fire),
+              ],
+            ),
+          )
+        ],
+      ),
     );
   }
 }
@@ -33,14 +52,11 @@ class FireModalLocation extends StatelessWidget {
     return Row(
       children: [
         Icon(Icons.map),
-        Column(
-          children: [
-            Text(fire.district),
-            Text(fire.concelho),
-            Text(fire.freguesia),
-            Text(fire.location),
-          ],
-        )
+        Expanded(
+          child: Text(
+            fire.location,
+          ),
+        ),
       ],
     );
   }
@@ -56,7 +72,10 @@ class FireModalStatus extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [Icon(Icons.fire_extinguisher), Text('Status: ${fire.status}')],
+      children: [
+        Icon(Icons.fire_extinguisher),
+        Text('Estado: ${fire.status}'),
+      ],
     );
   }
 }
@@ -73,13 +92,23 @@ class FireModalResources extends StatelessWidget {
     return Row(
       children: [
         Icon(Icons.man_4),
-        Column(
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Text('Bombeiros: ${fire.man}'),
-            Text('Veiculos: ${fire.terrain}'),
-            Text('Meios Aereos: ${fire.aerial}'),
+            ResourceIconValueWidget(
+              icon: FogosAppAssets.getAsset(ResourcesType.man),
+              value: fire.man,
+            ),
+            ResourceIconValueWidget(
+              icon: FogosAppAssets.getAsset(ResourcesType.terrain),
+              value: fire.terrain,
+            ),
+            ResourceIconValueWidget(
+              icon: FogosAppAssets.getAsset(ResourcesType.aerial),
+              value: fire.aerial,
+            ),
           ],
-        )
+        ),
       ],
     );
   }
@@ -94,10 +123,9 @@ class FireModalUpdated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Duration secofire = Duration(seconds: fire.updated.sec);
     return Row(children: [
       Icon(Icons.update_outlined),
-      Text(secofire.toString()),
+      Text("${fire.date} ${fire.hour}"),
     ]);
   }
 }

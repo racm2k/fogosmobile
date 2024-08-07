@@ -10,7 +10,7 @@ import 'package:fogospt/features/warning/application/warning_cubit.dart';
 import 'package:fogospt/features/warning/application/warning_flchart_data.dart';
 import 'package:fogospt/features/warning/application/warning_state.dart';
 import 'package:fogospt/features/warning/data/warning_service.dart';
-import 'package:fogospt/features/warning/presentation/resource_icon_value_widget.dart';
+import 'package:fogospt/widgets/resource_icon_value_widget.dart';
 import 'package:fogospt/features/warning/presentation/risk_fire_state_icon_widget.dart';
 import 'package:fogospt/features/warning/presentation/risk_of_fire_widget.dart';
 import 'package:fogospt/features/warning/presentation/warning_app_bar.dart';

@@ -10,7 +10,6 @@ import 'package:fogospt/features/map/presentation/map_page_initial_view.dart';
 import 'package:fogospt/features/map/presentation/map_page_loading_view.dart';
 import 'package:fogospt/features/map/presentation/map_page_modal_content.dart';
 import 'package:fogospt/features/map/presentation/map_page_view.dart';
-import 'package:go_router/go_router.dart';
 import 'package:wolt_modal_sheet/wolt_modal_sheet.dart';
 
 class MapPage extends StatelessWidget {
@@ -48,64 +47,22 @@ class MapPage extends StatelessWidget {
       context: context,
       pageListBuilder: (modalSheetcontext) {
         return [
-          buildModalSheetPage(fire, modalSheetcontext),
+          buildModalSheetPage(modalSheetcontext, fire),
         ];
       },
       modalTypeBuilder: (context) => WoltBottomSheetType(),
     );
   }
 
-  WoltModalSheetPage buildModalSheetPage(Fire fire, BuildContext context) {
+  WoltModalSheetPage buildModalSheetPage(
+    BuildContext context,
+    Fire fire,
+  ) {
     return WoltModalSheetPage(
-      stickyActionBar: TextButton(
-        onPressed: () {
-          context.go('/warning-detail', extra: fire);
-          context.pop();
-        },
-        child: FireModalSeeMore(fire: fire),
-      ),
-      isTopBarLayerAlwaysVisible: true,
-      topBarTitle: Row(
-        children: [
-          Icon(Icons.share),
-          Icon(Icons.notification_add),
-          Icon(Icons.close),
-        ],
-      ),
+      hasSabGradient: false,
+      isTopBarLayerAlwaysVisible: false,
       child: MapPageModalContent(
         fire: fire,
-      ),
-    );
-  }
-}
-
-class FireModalSeeMore extends StatelessWidget {
-  final Fire fire;
-  const FireModalSeeMore({
-    super.key,
-    required this.fire,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        context.go('/warning-detail', extra: fire);
-        context.pop();
-      },
-      child: Row(
-        children: [
-          Icon(
-            Icons.info_outline,
-            color: Colors.blue,
-          ),
-          Text(
-            'mais informações'.toUpperCase(),
-            style: TextStyle(
-              color: Colors.blue,
-            ),
-          ),
-        ],
       ),
     );
   }
