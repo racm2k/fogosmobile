@@ -1,3 +1,14 @@
+## 1.3.0
+
+ - **FIX**: navigation between map and detail. ([ad1a02d6](https://github.com/FogosPT/fogospt.git/commit/ad1a02d6bcd8bfc1e03b16cf6791f70ba6ba841c))
+ - **FEAT**: improve map bottom sheet. ([e341e79a](https://github.com/FogosPT/fogospt.git/commit/e341e79a115641e7615c86a685bbfc7b03b99e7a))
+ - **FEAT**: add color to the markers ([#177](https://github.com/FogosPT/fogospt.git/issues/177)). ([5cedad22](https://github.com/FogosPT/fogospt.git/commit/5cedad225ede98c65e2d05bfe001f53728f6c1df))
+ - **FEAT**: add bottom sheet to map page. ([5b909794](https://github.com/FogosPT/fogospt.git/commit/5b90979492d041e9c0884a4576bdcde94060a292))
+ - **FEAT**: load fire data. ([f27bb457](https://github.com/FogosPT/fogospt.git/commit/f27bb457e2e383a5fa75344caf4dc122c7f74786))
+ - **FEAT**: add marker importance. ([20edf443](https://github.com/FogosPT/fogospt.git/commit/20edf443d78b5b81aed2ce7f5799e2e2c655938d))
+ - **FEAT**: add assets and fire icon. ([30ed9d4b](https://github.com/FogosPT/fogospt.git/commit/30ed9d4b4814ea6218898198538717fcade149cb))
+ - **FEAT**: improve map configuration. ([776989a6](https://github.com/FogosPT/fogospt.git/commit/776989a6328a0d2bf2212b5dd4b6fa8ff99f3a67))
+
 ## 1.2.0
 
  - **FEAT**: add notifications. ([a120f69d](https://github.com/FogosPT/fogospt.git/commit/a120f69df407ad6f4e77dff8d587a74d0ff74c44))

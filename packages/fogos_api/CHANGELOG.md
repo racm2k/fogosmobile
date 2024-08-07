@@ -1,3 +1,7 @@
+## 0.0.4
+
+ - **FEAT**: load fire data. ([f27bb457](https://github.com/FogosPT/fogospt.git/commit/f27bb457e2e383a5fa75344caf4dc122c7f74786))
+
 ## 0.0.3
 
  - **FEAT**: FCM configuration. ([09247d74](https://github.com/FogosPT/fogospt.git/commit/09247d74826def88c906f670cfb81036a356a3ba))
