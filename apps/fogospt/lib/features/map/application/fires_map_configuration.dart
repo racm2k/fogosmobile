@@ -21,7 +21,7 @@ class FiresMapConfiguration {
   static TileLayer getTileLayer() {
     return TileLayer(
       urlTemplate:
-          "https://api.mapbox.com/styles/v1/fogospt/{id}/tiles/256/{z}/{x}/{y}?access_token={accessToken}",
+          "https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/256/{z}/{x}/{y}{r}?access_token={accessToken}",
       additionalOptions: {
         "accessToken": Env.mapboxAccessToken,
         'id': Env.mapboxAccessId,
