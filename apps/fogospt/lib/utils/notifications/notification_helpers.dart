@@ -84,7 +84,6 @@ class NotificationHelpers {
           );
         } on Exception catch (e) {
           print(e.toString());
-          // TODO
         }
       },
     );

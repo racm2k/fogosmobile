@@ -1,4 +1,6 @@
-# melos_managed_dependency_overrides: warnings_api
+# melos_managed_dependency_overrides: warnings_api,warnings_core
 dependency_overrides:
   warnings_api:
     path: ../warnings_api
+  warnings_core:
+    path: ../warnings_core

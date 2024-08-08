@@ -83,4 +83,5 @@ const _$FireStatusEnumMap = {
   FireStatus.done: 'done',
   FireStatus.falseAlarm: 'falseAlarm',
   FireStatus.falseAlert: 'falseAlert',
+  FireStatus.unknown: 'unknown',
 };

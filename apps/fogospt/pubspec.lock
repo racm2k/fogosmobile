@@ -454,7 +454,7 @@ packages:
       path: "../../packages/fogos_api"
       relative: true
     source: path
-    version: "0.0.3"
+    version: "0.0.4"
   freezed_annotation:
     dependency: transitive
     description:
@@ -528,7 +528,7 @@ packages:
     source: hosted
     version: "4.0.2"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
@@ -775,14 +775,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.4.0"
-  rxdart:
-    dependency: "direct main"
-    description:
-      name: rxdart
-      sha256: "5c3004a4a8dbb94bd4bf5412a4def4acdaa12e12f269737a5751369e12d1a962"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.28.0"
   sentry:
     dependency: "direct main"
     description:
@@ -980,6 +972,13 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "13.0.0"
+  warnings:
+    dependency: "direct main"
+    description:
+      path: "../warnings"
+      relative: true
+    source: path
+    version: "0.0.1"
   warnings_api:
     dependency: "direct overridden"
     description:
@@ -987,6 +986,13 @@ packages:
       relative: true
     source: path
     version: "0.0.3"
+  warnings_core:
+    dependency: "direct overridden"
+    description:
+      path: "../../packages/warnings_core"
+      relative: true
+    source: path
+    version: "0.0.1"
   watcher:
     dependency: transitive
     description:

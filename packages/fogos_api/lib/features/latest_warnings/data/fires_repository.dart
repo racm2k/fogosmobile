@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:fogos_api/constants/logger.dart';
+import '../../../../../../apps/warnings/lib/utils/loggers/logger.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
 import 'package:fogos_api/features/latest_warnings/domain/history_status.dart';

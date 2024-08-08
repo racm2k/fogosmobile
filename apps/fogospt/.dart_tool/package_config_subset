@@ -390,10 +390,6 @@ responsive_framework
 3.0
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/responsive_framework-1.4.0/
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/responsive_framework-1.4.0/lib/
-rxdart
-2.12
-file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/rxdart-0.28.0/
-file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/rxdart-0.28.0/lib/
 sentry
 2.17
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/sentry-7.18.0/
@@ -526,6 +522,10 @@ fogospt
 3.3
 file:///Users/filipe.barroso/Repositories/oss/fogosmobile/apps/fogospt/
 file:///Users/filipe.barroso/Repositories/oss/fogosmobile/apps/fogospt/lib/
+warnings
+3.3
+file:///Users/filipe.barroso/Repositories/oss/fogosmobile/apps/warnings/
+file:///Users/filipe.barroso/Repositories/oss/fogosmobile/apps/warnings/lib/
 fogos_api
 3.3
 file:///Users/filipe.barroso/Repositories/oss/fogosmobile/packages/fogos_api/
@@ -534,4 +534,8 @@ warnings_api
 3.3
 file:///Users/filipe.barroso/Repositories/oss/fogosmobile/packages/warnings_api/
 file:///Users/filipe.barroso/Repositories/oss/fogosmobile/packages/warnings_api/lib/
+warnings_core
+3.3
+file:///Users/filipe.barroso/Repositories/oss/fogosmobile/packages/warnings_core/
+file:///Users/filipe.barroso/Repositories/oss/fogosmobile/packages/warnings_core/lib/
 2

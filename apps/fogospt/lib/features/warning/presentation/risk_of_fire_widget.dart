@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:fogos_api/features/latest_warnings/domain/rcm.dart';
 import 'package:fogospt/features/warning/domain/risk_of_fire_type.dart';
-import 'package:fogospt/utils/extensions/context_extensions.dart';
+import 'package:warnings/utils/extensions/context_extensions.dart';
 
 class RiskOfFireWidget extends StatelessWidget {
   final RCM rcm;

@@ -67,6 +67,5 @@ Future<void> _handleBackgroundMessage(RemoteMessage message) async {
 
 void handleMessage(RemoteMessage message) {
   print("Local Storage FCM MODEL ${message.data}");
-  String data = message.data['map'].toString();
   // GetStorage().write("fcmModel", data);
 }

@@ -7,17 +7,18 @@ import 'package:fogos_api/shared/dependency_injection.dart';
 import 'package:fogospt/constants/assets.dart';
 import 'package:fogospt/constants/colors.dart';
 import 'package:fogospt/features/warning/application/warning_cubit.dart';
-import 'package:fogospt/features/warning/application/warning_flchart_data.dart';
 import 'package:fogospt/features/warning/application/warning_state.dart';
 import 'package:fogospt/features/warning/data/warning_service.dart';
-import 'package:fogospt/widgets/resource_icon_value_widget.dart';
 import 'package:fogospt/features/warning/presentation/risk_fire_state_icon_widget.dart';
 import 'package:fogospt/features/warning/presentation/risk_of_fire_widget.dart';
 import 'package:fogospt/features/warning/presentation/warning_app_bar.dart';
 import 'package:fogospt/features/warning/presentation/warning_chart_labels_item_widget.dart';
 import 'package:fogospt/features/warning/presentation/warning_chart_labels_widget.dart';
-import 'package:fogospt/utils/extensions/context_extensions.dart';
+import 'package:fogospt/features/warning/presentation/warning_flchart_data.dart';
 import 'package:fogospt/widgets/app_fogos_title_widget.dart';
+import 'package:intl/intl.dart';
+import 'package:warnings/utils/extensions/context_extensions.dart';
+import 'package:warnings/warnings.dart';
 
 class WarningDetailPage extends StatelessWidget {
   final Fire? warning;
@@ -113,15 +114,15 @@ class WarningLoadedView extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        ResourceIconValueWidget(
+                        IconAndValueWidget(
                           icon: FogosAppAssets.getAsset(ResourcesType.man),
                           value: state.latestResource.man,
                         ),
-                        ResourceIconValueWidget(
+                        IconAndValueWidget(
                           icon: FogosAppAssets.getAsset(ResourcesType.terrain),
                           value: state.latestResource.terrain,
                         ),
-                        ResourceIconValueWidget(
+                        IconAndValueWidget(
                           icon: FogosAppAssets.getAsset(ResourcesType.aerial),
                           value: state.latestResource.aerial,
                         ),
@@ -135,6 +136,7 @@ class WarningLoadedView extends StatelessWidget {
                         final data = WarningFlChartData(
                           resources: state.resources,
                         );
+
                         return SizedBox.fromSize(
                           size: Size(constraints.maxWidth, 300),
                           child: Padding(
@@ -288,7 +290,7 @@ class WarningLoadedView extends StatelessWidget {
   LineTouchData lineTouchData() {
     return LineTouchData(
       touchTooltipData: LineTouchTooltipData(
-        getTooltipColor: (touchedSpot) => Colors.transparent,
+        getTooltipColor: (touchedSpot) => Colors.lightGreen,
       ),
     );
   }
@@ -313,9 +315,24 @@ class WarningLoadedView extends StatelessWidget {
         ),
       ),
       bottomTitles: AxisTitles(
-        sideTitles: SideTitles(showTitles: true),
-        // sideTitles: daysOfWeekBottomTitle()
+        sideTitles: daysOfWeekBottomTitle(),
       ),
+    );
+  }
+
+  SideTitles daysOfWeekBottomTitle() {
+    // final data = getIt<WarningFlChartData>();
+    return SideTitles(
+      showTitles: true,
+      getTitlesWidget: (value, meta) {
+        final dateTime = DateTime.fromMillisecondsSinceEpoch(value.toInt());
+        ;
+        return SideTitleWidget(
+          axisSide: meta.axisSide,
+          angle: 125,
+          child: Text(DateFormat("dd/MM hh:mm").format(dateTime)),
+        );
+      },
     );
   }
 }

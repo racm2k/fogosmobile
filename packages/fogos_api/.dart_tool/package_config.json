@@ -452,6 +452,12 @@
       "languageVersion": "3.3"
     },
     {
+      "name": "warnings_core",
+      "rootUri": "../../warnings_core",
+      "packageUri": "lib/",
+      "languageVersion": "3.3"
+    },
+    {
       "name": "watcher",
       "rootUri": "file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/watcher-1.1.0",
       "packageUri": "lib/",
@@ -482,7 +488,7 @@
       "languageVersion": "3.3"
     }
   ],
-  "generated": "2024-08-05T19:10:58.534607Z",
+  "generated": "2024-08-08T11:02:05.260313Z",
   "generator": "pub",
   "generatorVersion": "3.3.3"
 }

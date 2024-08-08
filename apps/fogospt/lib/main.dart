@@ -6,10 +6,6 @@ import 'package:fogospt/app.dart';
 import 'package:fogospt/firebase_options.dart';
 import 'package:fogospt/utils/notifications/firebase_push_notifications_helper.dart';
 import 'package:fogospt/utils/notifications/notification_helpers.dart';
-import 'package:rxdart/rxdart.dart';
-
-// used to pass messages from event handler to the UI
-final _messageStreamController = BehaviorSubject<RemoteMessage>();
 
 final messaging = FirebaseMessaging.instance;
 

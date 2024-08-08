@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogospt/constants/assets.dart';
 import 'package:fogospt/features/map/presentation/fire_see_more_modal.dart';
-import 'package:fogospt/widgets/resource_icon_value_widget.dart';
 import 'package:go_router/go_router.dart';
+import 'package:warnings/widgets/widgets.dart';
 
 class MapPageModalContent extends StatelessWidget {
   final Fire fire;
@@ -95,15 +95,15 @@ class FireModalResources extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ResourceIconValueWidget(
+            IconAndValueWidget(
               icon: FogosAppAssets.getAsset(ResourcesType.man),
               value: fire.man,
             ),
-            ResourceIconValueWidget(
+            IconAndValueWidget(
               icon: FogosAppAssets.getAsset(ResourcesType.terrain),
               value: fire.terrain,
             ),
-            ResourceIconValueWidget(
+            IconAndValueWidget(
               icon: FogosAppAssets.getAsset(ResourcesType.aerial),
               value: fire.aerial,
             ),
