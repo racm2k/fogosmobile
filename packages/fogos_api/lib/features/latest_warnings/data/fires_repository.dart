@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import '../../../../../../apps/warnings/lib/utils/loggers/logger.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fires.dart';
 import 'package:fogos_api/features/latest_warnings/domain/history_status.dart';
 import 'package:fogos_api/features/latest_warnings/domain/rcm.dart';
 import 'package:fogos_api/features/latest_warnings/domain/resources.dart';
 import 'package:fogos_api/networking/fogos_base_client.dart';
+import 'package:warnings_core/logger.dart';
 
 class FiresRepository {
   final FogosBaseClient _fogosApi;
