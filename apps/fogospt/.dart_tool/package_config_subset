@@ -114,6 +114,10 @@ crypto
 2.19
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/crypto-3.0.3/
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/crypto-3.0.3/lib/
+csslib
+2.19
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/csslib-1.0.0/
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/csslib-1.0.0/lib/
 cupertino_icons
 2.19
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/cupertino_icons-1.0.6/
@@ -238,6 +242,10 @@ flutter_map
 3.0
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_map-7.0.2/
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_map-7.0.2/lib/
+flutter_native_splash
+3.0
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.0/
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_native_splash-2.4.0/lib/
 flutter_svg
 2.19
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/flutter_svg-2.0.10+1/
@@ -266,6 +274,10 @@ graphs
 2.18
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/graphs-2.3.1/
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/graphs-2.3.1/lib/
+html
+2.19
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/html-0.15.4/
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/html-0.15.4/lib/
 http
 3.3
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/http-1.2.1/
@@ -482,6 +494,10 @@ unicode
 2.12
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/unicode-0.3.1/
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/unicode-0.3.1/lib/
+universal_io
+2.17
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/universal_io-2.2.2/
+file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/universal_io-2.2.2/lib/
 uuid
 3.0
 file:///Users/filipe.barroso/.pub-cache/hosted/pub.dev/uuid-4.3.3/
