@@ -18,25 +18,24 @@ class FiresMapPage extends StatelessWidget {
     return Scaffold(
       body: BlocBuilder<MapLatestFiresCubit, MapLatestFiresState>(
         builder: (context, state) {
-          return state.when(
-            initial: () {
+          switch (state) {
+            case MapLatestFiresStateInitial():
               context.read<MapLatestFiresCubit>().fetchLatestFires();
               return MapPageInitialView();
-            },
-            loading: () => MapPageLoadingView(),
-            loaded: (fires) {
-              log(fires);
+            case MapLatestFiresStateLoading():
+              return MapPageLoadingView();
+            case MapLatestFiresStateLoaded():
               FiresMapMarkers mapMarkers = FiresMapMarkers(
-                fires: fires,
+                fires: state.fires,
                 onMarkerTapped: (Fire fire) {
                   log(fire);
                   showBottomModal(context, fire);
                 },
               );
               return MapPageView(mapMarkers: mapMarkers);
-            },
-            error: () => MapPageErrorView(),
-          );
+            case MapLatestFiresStateFailed():
+              return MapPageErrorView();
+          }
         },
       ),
     );
