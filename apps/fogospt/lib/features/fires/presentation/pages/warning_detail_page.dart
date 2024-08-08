@@ -325,7 +325,7 @@ class WarningLoadedView extends StatelessWidget {
   SideTitles daysOfWeekBottomTitle() {
     // final data = getIt<WarningFlChartData>();
     return SideTitles(
-      showTitles: true,
+      showTitles: false,
       getTitlesWidget: (value, meta) {
         final dateTime = DateTime.fromMillisecondsSinceEpoch(value.toInt());
         ;
