@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 enum ResourcesType {
@@ -26,18 +27,46 @@ class FogosAppAssets {
   );
 }
 
+///
+/// Icons
+///
 SvgPicture icoFire = SvgPicture.asset(
   'assets/icons/ico_fire.svg',
 );
+
 SvgPicture icoPointer = SvgPicture.asset(
   'assets/icons/ico_pointer.svg',
 );
+
 SvgPicture icoAlarm = SvgPicture.asset(
   'assets/icons/ico_alarm.svg',
 );
+
 SvgPicture icoFake = SvgPicture.asset(
   'assets/icons/ico_fake.svg',
 );
+
 SvgPicture icoWatch = SvgPicture.asset(
   'assets/icons/ico_watch.svg',
+);
+
+///
+/// Partners
+///
+Image partnerMapbox = Image(
+  image: AssetImage(
+    'assets/partners/mapbox.png',
+  ),
+);
+
+Image partnerOfficelan = Image(
+  image: AssetImage(
+    'assets/partners/officelan.png',
+  ),
+);
+
+Image partnerFundacaoLapalobo = Image(
+  image: AssetImage(
+    'assets/partners/fll.png',
+  ),
 );

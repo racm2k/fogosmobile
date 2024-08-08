@@ -4,7 +4,7 @@ import 'package:fogos_api/features/latest_warnings/data/fires_repository.dart';
 import 'package:fogos_api/shared/dependency_injection.dart';
 import 'package:fogospt/features/map/application/map_latest_fires/map_latest_fires_cubit.dart';
 import 'package:fogospt/features/map/data/fires_latest_service.dart';
-import 'package:fogospt/routing/fogospt_router.dart';
+import 'package:fogospt/routing/fogos_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class FogosApp extends StatelessWidget {
@@ -19,7 +19,7 @@ class FogosApp extends StatelessWidget {
         ),
       ),
       child: MaterialApp.router(
-        routerConfig: fogospt_router,
+        routerConfig: fogos_router,
         builder: (context, child) {
           return ResponsiveBreakpoints.builder(
             child: child!,
