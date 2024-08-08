@@ -3,6 +3,36 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 2024-08-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
+ - [`fogos_api` - `v0.0.4+1`](#fogos_api---v0041)
+ - [`warnings` - `v0.0.1+1`](#warnings---v0011)
+ - [`fogospt` - `v1.3.1`](#fogospt---v131)
+
+Packages with dependency updates only:
+
+> Packages listed below depend on other packages in this workspace that have had changes. Their versions have been incremented to bump the minimum dependency versions of the packages they depend upon in this project.
+
+ - `warnings` - `v0.0.1+1`
+ - `fogospt` - `v1.3.1`
+
+---
+
+#### `fogos_api` - `v0.0.4+1`
+
+ - **FIX**: missing import. ([73d76edf](https://github.com/FogosPT/fogospt.git/commit/73d76edf0931e26311d27704f907b74b3157e6a3))
+
+
 ## 2024-08-07
 
 ### Changes

@@ -1,3 +1,7 @@
+## 1.3.1
+
+ - Update a dependency to the latest release.
+
 ## 1.3.0
 
  - **FIX**: navigation between map and detail. ([ad1a02d6](https://github.com/FogosPT/fogospt.git/commit/ad1a02d6bcd8bfc1e03b16cf6791f70ba6ba841c))

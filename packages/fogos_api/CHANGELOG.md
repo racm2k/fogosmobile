@@ -1,3 +1,7 @@
+## 0.0.4+1
+
+ - **FIX**: missing import. ([73d76edf](https://github.com/FogosPT/fogospt.git/commit/73d76edf0931e26311d27704f907b74b3157e6a3))
+
 ## 0.0.4
 
  - **FEAT**: load fire data. ([f27bb457](https://github.com/FogosPT/fogospt.git/commit/f27bb457e2e383a5fa75344caf4dc122c7f74786))
