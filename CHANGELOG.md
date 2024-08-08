@@ -15,6 +15,27 @@ Packages with breaking changes:
 
 Packages with other changes:
 
+ - [`fogospt` - `v1.3.2`](#fogospt---v132)
+
+---
+
+#### `fogospt` - `v1.3.2`
+
+ - **FIX**: fire_map_page. ([50f5a4c4](https://github.com/FogosPT/fogospt.git/commit/50f5a4c4574e0bef8223fa8ba3b539ea0875f359))
+
+
+## 2024-08-08
+
+### Changes
+
+---
+
+Packages with breaking changes:
+
+ - There are no breaking changes in this release.
+
+Packages with other changes:
+
  - [`fogos_api` - `v0.0.4+1`](#fogos_api---v0041)
  - [`warnings` - `v0.0.1+1`](#warnings---v0011)
  - [`fogospt` - `v1.3.1`](#fogospt---v131)

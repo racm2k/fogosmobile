@@ -1,3 +1,7 @@
+## 1.3.2
+
+ - **FIX**: fire_map_page. ([50f5a4c4](https://github.com/FogosPT/fogospt.git/commit/50f5a4c4574e0bef8223fa8ba3b539ea0875f359))
+
 ## 1.3.1
 
  - Update a dependency to the latest release.
