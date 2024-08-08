@@ -29,7 +29,7 @@ class FiresMapPage extends StatelessWidget {
                 fires: state.fires,
                 onMarkerTapped: (Fire fire) {
                   log(fire);
-                  showBottomModal(context, fire);
+                  _showBottomModal(context, fire);
                 },
               );
               return MapPageView(mapMarkers: mapMarkers);
@@ -41,7 +41,7 @@ class FiresMapPage extends StatelessWidget {
     );
   }
 
-  Future<dynamic> showBottomModal(BuildContext context, Fire fire) {
+  Future<dynamic> _showBottomModal(BuildContext context, Fire fire) {
     return WoltModalSheet.show(
       context: context,
       pageListBuilder: (modalSheetcontext) {
@@ -60,6 +60,7 @@ class FiresMapPage extends StatelessWidget {
     return WoltModalSheetPage(
       hasSabGradient: false,
       isTopBarLayerAlwaysVisible: false,
+      hasTopBarLayer: false,
       child: MapPageModalContentView(
         fire: fire,
       ),

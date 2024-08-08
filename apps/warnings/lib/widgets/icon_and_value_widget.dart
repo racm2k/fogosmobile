@@ -19,6 +19,8 @@ class IconAndValueWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Flex(
       direction: Axis.horizontal,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         ConstrainedBox(
           constraints: BoxConstraints(

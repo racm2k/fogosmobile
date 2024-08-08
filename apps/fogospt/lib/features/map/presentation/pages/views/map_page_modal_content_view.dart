@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fogos_api/features/latest_warnings/domain/fire.dart';
 import 'package:fogospt/constants/assets.dart';
+import 'package:fogospt/widgets/app_fogos_title_widget.dart';
 import 'package:go_router/go_router.dart';
-import 'package:warnings/widgets/widgets.dart';
+import 'package:warnings/warnings.dart';
 
 class MapPageModalContentView extends StatelessWidget {
   final Fire fire;
@@ -14,31 +15,55 @@ class MapPageModalContentView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.only(
+        bottom: 8,
+        left: 8,
+        right: 8,
+        top: 20,
+      ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          FireModalLocation(fire: fire),
-          FireModalStatus(fire: fire),
-          FireModalResources(fire: fire),
-          FireModalUpdated(fire: fire),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              TextButton.icon(
-                onPressed: () => _navigateToDetail(context),
-                icon: Icon(
-                  Icons.info_outline,
-                  color: Colors.blue,
+              /// First column
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    _FireModalUpdatedWidget(fire: fire),
+                    _FireModalLocationWidget(fire: fire),
+                    _FireModalStatusWidget(fire: fire),
+                  ],
                 ),
-                label: Text(
-                  'mais informações'.toUpperCase(),
-                  style: TextStyle(
-                    color: Colors.blue,
-                  ),
+              ),
+
+              /// Second column
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    _FireModalResourcesWidget(fire: fire),
+                  ],
                 ),
               ),
             ],
-          )
+          ),
+          TextButton.icon(
+              onPressed: () {
+                _navigateToDetail(context);
+              },
+              icon: Icon(
+                Icons.info_outline,
+                color: Colors.blue,
+              ),
+              label: Text(
+                'mais informações'.toUpperCase(),
+                style: TextStyle(
+                  color: Colors.blue,
+                ),
+              ))
         ],
       ),
     );
@@ -53,60 +78,68 @@ class MapPageModalContentView extends StatelessWidget {
   }
 }
 
-class FireModalLocation extends StatelessWidget {
+class _FireModalLocationWidget extends StatelessWidget {
   final Fire fire;
-  const FireModalLocation({
-    super.key,
+  const _FireModalLocationWidget({
     required this.fire,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.map),
-        Expanded(
-          child: Text(
-            fire.location,
-          ),
+        AppFogosTitleWidget(
+          title: "local",
+        ),
+        Text(
+          fire.location,
+          style: context.textTheme.bodyMedium,
         ),
       ],
     );
   }
 }
 
-class FireModalStatus extends StatelessWidget {
+class _FireModalStatusWidget extends StatelessWidget {
   final Fire fire;
-  const FireModalStatus({
-    super.key,
+  const _FireModalStatusWidget({
     required this.fire,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.fire_extinguisher),
-        Text('Estado: ${fire.status}'),
+        AppFogosTitleWidget(
+          title: "estado",
+        ),
+        Text(
+          fire.status,
+          style: context.textTheme.bodyMedium,
+        ),
       ],
     );
   }
 }
 
-class FireModalResources extends StatelessWidget {
+class _FireModalResourcesWidget extends StatelessWidget {
   final Fire fire;
-  const FireModalResources({
-    super.key,
+  const _FireModalResourcesWidget({
     required this.fire,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Icon(Icons.man_4),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        AppFogosTitleWidget(
+          title: "meios",
+        ),
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             IconAndValueWidget(
               icon: FogosAppAssets.getAsset(ResourcesType.man),
@@ -127,18 +160,25 @@ class FireModalResources extends StatelessWidget {
   }
 }
 
-class FireModalUpdated extends StatelessWidget {
+class _FireModalUpdatedWidget extends StatelessWidget {
   final Fire fire;
-  const FireModalUpdated({
-    super.key,
+  const _FireModalUpdatedWidget({
     required this.fire,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Row(children: [
-      Icon(Icons.update_outlined),
-      Text("${fire.date} ${fire.hour}"),
-    ]);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        AppFogosTitleWidget(
+          title: "Início",
+        ),
+        Text(
+          "${fire.date} ${fire.hour}",
+          style: context.textTheme.bodyMedium,
+        ),
+      ],
+    );
   }
 }
