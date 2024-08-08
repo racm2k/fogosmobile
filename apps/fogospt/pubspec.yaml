@@ -33,8 +33,9 @@ dependencies:
   wolt_modal_sheet: ^0.8.0
   fl_chart: ^0.68.0
   intl: ^0.19.0
+
   warnings:
-    path: ../warnings
+  warnings_core:
   
 
 dev_dependencies:

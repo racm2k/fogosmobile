@@ -454,7 +454,7 @@ packages:
       path: "../../packages/fogos_api"
       relative: true
     source: path
-    version: "0.0.4"
+    version: "0.0.4+1"
   freezed_annotation:
     dependency: transitive
     description:
@@ -868,6 +868,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
+  svg_flutter:
+    dependency: transitive
+    description:
+      name: svg_flutter
+      sha256: "5d6b37ca069e5e0eaa987691dc61594674e687b5bec8fd9797877a5f331d43e1"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
   term_glyph:
     dependency: transitive
     description:
@@ -978,7 +986,7 @@ packages:
       path: "../warnings"
       relative: true
     source: path
-    version: "0.0.1"
+    version: "0.0.1+1"
   warnings_api:
     dependency: "direct overridden"
     description:
@@ -987,7 +995,7 @@ packages:
     source: path
     version: "0.0.3"
   warnings_core:
-    dependency: "direct overridden"
+    dependency: "direct main"
     description:
       path: "../../packages/warnings_core"
       relative: true

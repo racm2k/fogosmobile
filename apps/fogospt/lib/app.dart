@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fogos_api/features/latest_warnings/data/fires_repository.dart';
 import 'package:fogos_api/shared/dependency_injection.dart';
-import 'package:fogospt/features/map/application/latest_fires/latest_fires_cubit.dart';
-import 'package:fogospt/features/map/data/latest_fires_service.dart';
-import 'package:fogospt/routing/route.dart';
+import 'package:fogospt/features/map/application/map_latest_fires/map_latest_fires_cubit.dart';
+import 'package:fogospt/features/map/data/fires_latest_service.dart';
+import 'package:fogospt/routing/fogospt_router.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
 class FogosApp extends StatelessWidget {
@@ -13,13 +13,13 @@ class FogosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => LatestFiresCubit(
-        LatestFiresService(
+      create: (context) => MapLatestFiresCubit(
+        FiresLatestService(
           getIt<FiresRepository>(),
         ),
       ),
       child: MaterialApp.router(
-        routerConfig: router,
+        routerConfig: fogospt_router,
         builder: (context, child) {
           return ResponsiveBreakpoints.builder(
             child: child!,

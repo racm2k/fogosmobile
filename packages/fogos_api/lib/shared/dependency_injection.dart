@@ -3,13 +3,11 @@ import 'package:fogos_api/fogos_environment.dart';
 import 'package:fogos_api/networking/fogos_api.dart';
 import 'package:get_it/get_it.dart';
 
-/// TODO Move to shared packaged
-
 final getIt = GetIt.instance;
 
 void setupFogosAPIDependencyInjection() {
-  getIt.registerSingleton<FiresRepository>(
-    FiresRepository(
+  getIt.registerLazySingleton<FiresRepository>(
+    () => FiresRepository(
       FogosApi(fogosEnvironment: FogosEnvironment.dev()),
     ),
   );
